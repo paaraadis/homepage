@@ -39,13 +39,13 @@
         <ul>
           <li><a href="#contact">💌 Send Message</a></li>
           <li><a href="#">⭐ Add to Favorites</a></li>
-          <li><a href="#">🎨 Portfolio</a></li>
+          <li><a href="#">🎨 <span class="highlight">Portfolio</span></a></li>
         </ul>
       </div>
 
       <div class="info-box">
         <h3>Interests</h3>
-        <p>Art, Design, Music, Retro Web ✨</p>
+        <p><span class="highlight">Art</span>, <span class="highlight">Design</span>, <span class="highlight">Music</span>, Retro Web ✨</p>
       </div>
 
       <!-- 🌸 SPARKLY MUSIC PLAYER -->
@@ -65,7 +65,7 @@
 
       <div class="about-box">
         <h3>About Me</h3>
-        <p>Welcome to my art portfolio — I love creating nostalgic, surreal, and dreamy pieces.</p>
+        <p>Welcome to my art portfolio — I love creating <span class="highlight">nostalgic</span>, <span class="highlight">surreal</span>, and <span class="highlight">dreamy</span> pieces.</p>
       </div>
 
       <div class="friends-box">
@@ -85,4 +85,38 @@
       <div class="posts-box">
         <h3>Latest Posts ✨</h3>
         <div class="post">
-          <h4>“Soft Light” <span style="font-size
+          <h4>“Soft Light”</h4>
+          <img src="art1.jpg" alt="Artwork 1" class="art-img">
+          <p>My latest illustration exploring <span class="highlight">dreamscapes</span>.</p>
+        </div>
+      </div>
+
+      <!-- 💌 COMMENT BOX -->
+      <div id="contact" class="comment-box">
+        <h3>Leave a Comment or Message 💬</h3>
+        <form action="https://formspree.io/f/mnngyaga" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ✨ CURSOR SPARKLE TRAIL JS -->
+  <script>
+    document.addEventListener('mousemove', e => {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'cursor-sparkle';
+      sparkle.style.left = (e.clientX - 5) + 'px';
+      sparkle.style.top = (e.clientY - 5) + 'px';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
