@@ -1,51 +1,54 @@
-// Music Player with Error Handling
+// Music Player with debugging
 const audio = document.getElementById('audio-player');
 const playButtons = document.querySelectorAll('.play-btn');
 let currentPlaying = null;
 
+console.log('Music player loaded');
+console.log('Found buttons:', playButtons.length);
+console.log('Audio element:', audio);
+
 playButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const src = btn.getAttribute('data-src');
-    
-    console.log('Attempting to play:', src); // Debug log
+    console.log('Button clicked! Trying to play:', src);
     
     if (currentPlaying === btn) {
-      // Toggle play/pause
       if (!audio.paused) {
         audio.pause();
         btn.textContent = '▶️';
+        console.log('Paused');
       } else {
-        audio.play().catch(err => {
-          console.error('Playback error:', err);
-          alert('Could not play audio. Check console for details.');
+        audio.play().then(() => {
+          console.log('Playing resumed');
+        }).catch(err => {
+          console.error('Play error:', err);
         });
         btn.textContent = '⏸️';
       }
     } else {
-      // Pause previous
       if (currentPlaying) currentPlaying.textContent = '▶️';
       audio.src = src;
-      audio.play().catch(err => {
-        console.error('Playback error:', err);
-        alert('Could not load audio file: ' + src);
+      console.log('Audio source set to:', audio.src);
+      
+      audio.play().then(() => {
+        console.log('Started playing successfully');
+      }).catch(err => {
+        console.error('Failed to play:', err);
       });
+      
       btn.textContent = '⏸️';
       currentPlaying = btn;
     }
   });
 });
 
-// When audio ends, reset button
 audio.addEventListener('ended', () => {
   if (currentPlaying) currentPlaying.textContent = '▶️';
   currentPlaying = null;
 });
 
-// Error handling
 audio.addEventListener('error', (e) => {
-  console.error('Audio error:', e);
-  console.error('Failed to load:', audio.src);
-  if (currentPlaying) currentPlaying.textContent = '▶️';
-  currentPlaying = null;
+  console.error('Audio loading error:', e);
+  console.error('Current source:', audio.src);
+  console.error('Error code:', audio.error ? audio.error.code : 'unknown');
 });
-```
