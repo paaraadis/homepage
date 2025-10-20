@@ -1,38 +1,35 @@
-const audio = document.getElementById('audio');
-const buttons = document.querySelectorAll('.play-btn');
-let currentTrack = null;
+// Music Player
+const audio = document.getElementById('audio-player');
+const playButtons = document.querySelectorAll('.play-btn');
+let currentPlaying = null;
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    const li = button.parentElement;
-    const track = li.getAttribute('data-src');
+playButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const src = btn.getAttribute('data-src');
 
-    if(currentTrack === track){
-      if(!audio.paused){
+    if (currentPlaying === btn) {
+      // Toggle play/pause
+      if (!audio.paused) {
         audio.pause();
-        button.textContent = 'Play';
+        btn.textContent = '▶️';
       } else {
         audio.play();
-        button.textContent = 'Pause';
+        btn.textContent = '⏸️';
       }
     } else {
-      audio.src = track;
+      // Pause previous
+      if (currentPlaying) currentPlaying.textContent = '▶️';
+
+      audio.src = src;
       audio.play();
-      if(currentTrack){
-        const prevBtn = document.querySelector(`.track-list li[data-src="${currentTrack}"] button`);
-        if(prevBtn) prevBtn.textContent = 'Play';
-      }
-      button.textContent = 'Pause';
-      currentTrack = track;
+      btn.textContent = '⏸️';
+      currentPlaying = btn;
     }
 
-    buttons.forEach(b => { if(b !== button) b.textContent = 'Play'; });
+    // When audio ends, reset button
+    audio.onended = () => {
+      if (currentPlaying) currentPlaying.textContent = '▶️';
+      currentPlaying = null;
+    };
   });
-});
-
-audio.addEventListener('ended', () => {
-  if(currentTrack){
-    const btn = document.querySelector(`.track-list li[data-src="${currentTrack}"] button`);
-    if(btn) btn.textContent = 'Play';
-  }
 });
