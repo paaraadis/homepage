@@ -4,7 +4,8 @@ body {
   font-family: "Calibri", sans-serif;
   color: #000;
   margin: 0;
-  padding: 0;
+  padding: 0;  overflow-y: auto;
+
   font-size: 13px;
 }
 
@@ -182,7 +183,7 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 140px;
+  max-height: 100px;
   overflow-y: auto;
 
 }
@@ -287,6 +288,7 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 
 
 
