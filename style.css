@@ -24,7 +24,7 @@ a:hover {
   background-color: #e9cee5;
   border-bottom: 2px solid hotpink;
   padding: 8px 15px;
-  font-size: 12px;
+  font-size: 13px;
   align-items: center;
 }
 
@@ -75,10 +75,10 @@ a:hover {
 
 .content {
   flex-grow: 1;
-  max-width: 800px;
+  max-width: 600px;
 }
 
-/* === BOXES === */
+/* === BOXES WITH STATIC GRADIENT === */
 .profile-box,
 .info-box,
 .music-box,
@@ -87,63 +87,49 @@ a:hover {
 .friends-box,
 .posts-box,
 .comment-box {
-  background-color: #e9cee5;
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
   border: 2px solid hotpink;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 0;
 }
 
-.profile-pic {
-  width: 100%;
-  border: 2px solid hotpink;
-  margin-bottom: 10px;
+/* === MUSIC PLAYER BUTTONS === */
+.play-btn {
+  background: hotpink;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
   border-radius: 0;
 }
 
-.info-box h3,
-.music-box h3,
-.about-box h3,
-.friends-box h3,
-.posts-box h3,
-.comment-box h3 {
-  margin-top: 0;
-  font-size: 12px;
+.play-btn:hover {
+  background: deeppink;
 }
 
-/* === STATIC GRADIENT MUSIC PLAYER === */
-.music-box {
-  border: 2px solid hotpink;
-  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
-  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
-  border-radius: 0;
+.track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-/* === FRIENDS GRID === */
-.friends-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-}
-
-.friends-grid img {
-  width: 100%;
-  border: 2px solid hotpink;
-  border-radius: 0;
+.track .song-name {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* === POSTS === */
 .post {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
   border: 2px solid hotpink;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 0;
-}
-
-.post h4 {
-  margin-top: 0;
-  font-size: 13px;
 }
 
 .art-img {
@@ -154,114 +140,16 @@ a:hover {
 }
 
 .post-footer {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 5px;
 }
 
-/* === COMMENT BOX === */
-.comment-box form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* === FRIENDS GRID === */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
 }
 
-.comment-box input,
-.comment-box textarea {
-  padding: 6px;
-  border: 1px solid hotpink;
-  background: #fff;
-  font-size: 12px;
-  font-family: inherit;
-  border-radius: 0;
-}
-
-.comment-box button {
-  background: hotpink;
-  color: white;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 0;
-}
-
-.comment-box button:hover {
-  background: #ff69b4;
-}
-
-.tiny-note {
-  font-size: 10px;
-  color: #555;
-  margin-top: 5px;
-}
-
-/* === MUSIC PLAYER BUTTONS === */
-.track button,
-.play-btn {
-  background: hotpink;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  border-radius: 0;
-}
-
-.track button:hover,
-.play-btn:hover {
-  background: deeppink;
-}
-
-/* === MOBILE === */
-@media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .sidebar {
-    width: 100%;
-    max-width: 500px;
-  }
-  .content {
-    max-width: 100%;
-  }
-}
-
-/* === CURSOR SPARKLE TRAIL === */
-.cursor-sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: radial-gradient(circle, #ff69b4, transparent 60%);
-  pointer-events: none;
-  animation: sparkleFade 0.8s ease-out forwards;
-  z-index: 9999;
-}
-
-@keyframes sparkleFade {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(2);
-  }
-}
-
-/* === CUSTOM CURSOR === */
-* {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
-}
-
-/* === FUN HOVER COLORS === */
-strong,
-em {
-  color: hotpink;
-}
-
-a:hover,
-.track button:hover,
-.play-btn:hover {
-  filter: brightness(1.2);
-}
+.friends-grid img {
+  width: 
