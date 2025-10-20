@@ -1,13 +1,14 @@
+/* 🌸 General */
 body {
-  background: #f6f6f6;
+  background: pink;
   font-family: Calibri, sans-serif;
   margin: 0;
   color: #333;
 }
 
-/* Top Bar */
+/* 🌸 Top Bar */
 .top-bar {
-  background: #003366;
+  background: hotpink;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -31,7 +32,7 @@ body {
   margin-right: 10px;
 }
 
-/* Layout */
+/* 🌸 Layout */
 .container {
   display: flex;
   max-width: 1100px;
@@ -47,12 +48,12 @@ body {
   flex: 1;
 }
 
-/* Boxes */
+/* 🌸 Boxes */
 .profile-box, .info-box, .music-box, .about-box, .friends-box, .posts-box, .comment-box {
-  background: white;
+  background: #fff;
   padding: 10px;
   margin-bottom: 15px;
-  border: 2px solid pink;
+  border: 2px solid hotpink;
 }
 
 .profile-pic {
@@ -61,10 +62,11 @@ body {
   margin-bottom: 8px;
 }
 
-/* Navigation */
+/* 🌸 Navigation */
 .info-box ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .info-box ul li {
@@ -72,7 +74,7 @@ body {
 }
 
 .info-box ul li a {
-  color: #003366;
+  color: hotpink;
   text-decoration: none;
 }
 
@@ -80,7 +82,7 @@ body {
   text-decoration: underline;
 }
 
-/* Playlist */
+/* 🌸 Playlist */
 .playlist {
   list-style: none;
   padding: 0;
@@ -91,11 +93,12 @@ body {
   display: flex;
   align-items: center;
   margin: 5px 0;
+  font-size: 14px;
 }
 
 .play-btn {
-  background: pink;
-  border: 1px solid #cc6699;
+  background: hotpink;
+  border: none;
   color: white;
   font-size: 14px;
   margin-right: 8px;
@@ -105,10 +108,10 @@ body {
 }
 
 .play-btn:hover {
-  background: hotpink;
+  background: deeppink;
 }
 
-/* Friends Grid */
+/* 🌸 Friends Grid */
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -117,10 +120,10 @@ body {
 
 .friends-grid img {
   width: 100%;
-  border: 1px solid pink;
+  border: 1px solid hotpink;
 }
 
-/* Comment Box */
+/* 🌸 Comment Box */
 .comment-box input,
 .comment-box textarea,
 .comment-box button {
@@ -132,36 +135,17 @@ body {
 }
 
 .comment-box button {
-  background: pink;
+  background: hotpink;
   border: none;
   color: white;
   cursor: pointer;
 }
 
 .comment-box button:hover {
-  background: hotpink;
+  background: deeppink;
 }
 
-/* Sparkly Border */
-.sparkly-border {
-  position: relative;
-  border: 2px solid pink;
-}
-
-.sparkly-border::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px dashed hotpink;
-  pointer-events: none;
-  animation: sparkle 2s linear infinite;
-}
-
-@keyframes sparkle {
-  to { transform: rotate(360deg); }
-}
-
-/* Cursor Sparkle */
+/* 🌸 Sparkly Cursor */
 .cursor-sparkle {
   position: absolute;
   width: 20px;
@@ -169,7 +153,7 @@ body {
   pointer-events: none;
   background: radial-gradient(circle, white 40%, transparent 60%);
   border-radius: 50%;
-  box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+  box-shadow: 0 0 10px hotpink, 0 0 20px hotpink, 0 0 30px hotpink;
   transform: translate(-50%, -50%);
   z-index: 9999;
 }
