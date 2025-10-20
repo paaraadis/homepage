@@ -1,159 +1,178 @@
-/* 🌸 General */
+/* === GLOBAL === */
 body {
-  background: pink;
-  font-family: Calibri, sans-serif;
+  background-color: #dcb9d8;
+  font-family: "Calibri", sans-serif;
+  color: #000;
   margin: 0;
-  color: #333;
+  padding: 0;
+  font-size: 12px;
 }
 
-/* 🌸 Top Bar */
-.top-bar {
-  background: hotpink;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 15px;
-  font-size: 14px;
-}
-
-.top-bar a {
-  color: white;
+a {
+  color: hotpink;
   text-decoration: none;
-  margin: 0 6px;
 }
-
-.top-bar a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-.myspace-logo {
-  font-weight: bold;
-  text-transform: lowercase;
-  margin-right: 10px;
+/* === TOP NAV BAR === */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e9cee5;
+  border-bottom: 2px solid hotpink;
+  padding: 8px 15px;
+  font-size: 12px;
+  align-items: center;
 }
 
-/* 🌸 Layout */
+.top-left a,
+.top-right a {
+  color: hotpink;
+  margin-left: 10px;
+}
+
+.top-left a:first-child {
+  margin-left: 0;
+}
+
+.top-left .myspace-logo {
+  font-weight: bold;
+  margin-right: 15px;
+  color: hotpink;
+}
+
+.top-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* === LAYOUT === */
 .container {
   display: flex;
-  max-width: 1100px;
-  margin: 20px auto;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
 .sidebar {
-  width: 250px;
+  width: 280px;
+  min-width: 280px;
 }
 
-.content {
-  flex: 1;
-}
-
-/* 🌸 Boxes */
-.profile-box, .info-box, .music-box, .about-box, .friends-box, .posts-box, .comment-box {
-  background: #fff;
+.profile-box,
+.info-box,
+.music-box,
+.header-box,
+.about-box,
+.friends-box,
+.posts-box,
+.comment-box {
+  background-color: #e9cee5;
+  border: 2px solid hotpink;
   padding: 10px;
   margin-bottom: 15px;
-  border: 2px solid hotpink;
+  border-radius: 0;
 }
 
 .profile-pic {
   width: 100%;
-  display: block;
-  margin-bottom: 8px;
+  border: 2px solid hotpink;
+  margin-bottom: 10px;
+  border-radius: 0;
 }
 
-/* 🌸 Navigation */
-.info-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.music-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
+  animation: sparkleBorder 3s infinite ease-in-out;
 }
 
-.info-box ul li {
-  margin-bottom: 5px;
+@keyframes sparkleBorder {
+  0% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
+  50% { box-shadow: 0 0 15px deeppink, 0 0 30px hotpink; }
+  100% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
 }
 
-.info-box ul li a {
-  color: hotpink;
-  text-decoration: none;
+.content {
+  flex-grow: 1;
+  max-width: 800px;
 }
 
-.info-box ul li a:hover {
-  text-decoration: underline;
-}
-
-/* 🌸 Playlist */
-.playlist {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.playlist li {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.play-btn {
-  background: hotpink;
-  border: none;
-  color: white;
-  font-size: 14px;
-  margin-right: 8px;
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-}
-
-.play-btn:hover {
-  background: deeppink;
-}
-
-/* 🌸 Friends Grid */
+/* === FRIENDS GRID === */
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
 }
-
 .friends-grid img {
   width: 100%;
-  border: 1px solid hotpink;
+  border: 2px solid hotpink;
+  border-radius: 0;
 }
 
-/* 🌸 Comment Box */
+/* === POSTS === */
+.post {
+  background-color: #fff;
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+.art-img {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+
+/* === COMMENT BOX === */
 .comment-box input,
 .comment-box textarea,
 .comment-box button {
-  display: block;
-  width: 100%;
-  margin: 5px 0;
-  padding: 6px;
-  border: 1px solid #ccc;
+  border-radius: 0;
 }
-
-.comment-box button {
-  background: hotpink;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
 .comment-box button:hover {
-  background: deeppink;
+  background: #ff69b4;
 }
 
-/* 🌸 Sparkly Cursor */
+/* === MUSIC PLAYER BUTTONS === */
+.track button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 0;
+}
+.track button:hover { background: deeppink; }
+
+/* === CURSOR SPARKLE === */
 .cursor-sparkle {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ff69b4, transparent 60%);
   pointer-events: none;
-  background: radial-gradient(circle, white 40%, transparent 60%);
-  border-radius: 50%;
-  box-shadow: 0 0 10px hotpink, 0 0 20px hotpink, 0 0 30px hotpink;
-  transform: translate(-50%, -50%);
+  animation: sparkleFade 1s ease-out forwards;
   z-index: 9999;
+}
+@keyframes sparkleFade {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(2); }
+}
+
+/* === CUSTOM CURSOR === */
+* { cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important; }
+
+/* === MOBILE === */
+@media(max-width:800px){
+  .container{flex-direction:column;align-items:center;}
+  .sidebar{width:100%; max-width:500px;}
+  .content{max-width:100%;}
 }
