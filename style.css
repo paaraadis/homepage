@@ -1,4 +1,4 @@
-/* ========== GENERAL ========== */
+/* ========== BASE STYLES ========== */
 body {
   font-family: Calibri, sans-serif;
   background-color: #fafafa;
@@ -7,44 +7,36 @@ body {
   color: #000;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
+a { text-decoration: none; color: #000; }
+a:hover { text-decoration: underline; }
+
+/* ========== TOP NAV ========== */
+.top-bar {
+  background-color: #222;
+  color: #fff;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-a:hover {
+.top-bar a {
+  color: #fff;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.top-bar a:hover {
   text-decoration: underline;
 }
 
-/* ========== TOP NAV ========== */
-.top-nav {
-  background-color: #222;
-  padding: 10px 0;
-}
-
-.top-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.top-nav li {
-  margin: 0 15px;
-}
-
-.top-nav a {
-  color: #fff;
+.myspace-logo {
   font-weight: bold;
-  padding: 5px 10px;
+  margin-right: 15px;
+  text-transform: lowercase;
 }
 
-.top-nav a:hover {
-  background-color: #444;
-}
-
-/* ========== PAGE LAYOUT ========== */
+/* ========== LAYOUT ========== */
 .container {
   display: flex;
   max-width: 1200px;
@@ -57,91 +49,162 @@ a:hover {
   padding: 10px;
 }
 
-.sidebar ul {
+.profile-box {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.profile-pic {
+  width: 100%;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.info-box {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.info-box ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar ul li {
+.info-box li {
   margin-bottom: 8px;
 }
 
-.sidebar ul li a {
+.info-box a {
   display: block;
-  background: #f2f2f2;
-  color: #000;
-  padding: 8px 12px;
+  padding: 6px;
   border: 1px solid #ccc;
-  transition: background 0.2s ease;
+  background: #fff;
 }
 
-.sidebar ul li a:hover {
+.info-box a:hover {
   background: #e0e0e0;
 }
 
-/* ========== MAIN CONTENT ========== */
-.main-content {
-  width: 75%;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-}
-
-.main-content h1 {
-  margin-top: 0;
-}
-
-.example-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid #ccc;
-}
-
 /* ========== MUSIC PLAYER ========== */
-.music-player {
+.music-box {
   background: pink;
   border: 2px solid #ff69b4;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 10px;
 }
 
-.music-player h2 {
-  margin-top: 0;
-}
-
-.music-player ul {
+.playlist {
   list-style: none;
   padding: 0;
 }
 
-.music-player li {
+.playlist li {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .play-btn {
   background: #ff69b4;
   color: white;
   border: none;
-  padding: 4px 10px;
-  margin-right: 10px;
+  padding: 2px 8px;
+  margin-right: 8px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s ease;
 }
 
 .play-btn:hover {
   background: #ff1493;
 }
 
-/* ========== FOOTER ========== */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+/* ========== MAIN CONTENT ========== */
+.content {
+  width: 75%;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.header-box h1 { margin-top: 0; }
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.friends-grid img {
+  width: 100%;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.post {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.art-img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  margin: 8px 0;
+}
+
+/* ========== COMMENT BOX ========== */
+.comment-box {
   margin-top: 20px;
+  padding: 10px;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+}
+
+.comment-box input,
+.comment-box textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  font-family: Calibri, sans-serif;
+}
+
+.comment-box button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background: #ff1493;
+}
+
+.tiny-note {
+  font-size: 12px;
+  color: #555;
+}
+
+/* ========== SPARKLY BORDER EFFECT ========== */
+.sparkly-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkly-border::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(90deg, pink, hotpink, pink);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
