@@ -5,7 +5,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 a {
@@ -83,6 +83,13 @@ a:hover {
   margin-bottom: 15px;
   border-radius: 0;
   box-shadow: 0 0 10px hotpink, 0 0 20px pink;
+  animation: sparkleBorder 3s infinite ease-in-out;
+}
+
+@keyframes sparkleBorder {
+  0% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
+  50% { box-shadow: 0 0 15px deeppink, 0 0 30px hotpink; }
+  100% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
 }
 
 .profile-pic {
@@ -94,15 +101,15 @@ a:hover {
 
 .info-box h3,
 .music-box h3,
-.header-box h1,
 .about-box h3,
 .friends-box h3,
 .posts-box h3,
 .comment-box h3 {
   margin-top: 0;
+  font-size: 12px;
 }
 
-/* === FRIENDS === */
+/* === FRIENDS GRID === */
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -122,11 +129,12 @@ a:hover {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 0;
+  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
 }
 
 .post h4 {
   margin-top: 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .art-img {
@@ -137,21 +145,20 @@ a:hover {
 }
 
 .post-footer {
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 5px;
-  color: #000;
 }
 
 /* === COMMENT BOX === */
 .comment-box form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .comment-box input,
 .comment-box textarea {
-  padding: 8px;
+  padding: 6px;
   border: 1px solid hotpink;
   background: #fff;
   font-size: 14px;
@@ -163,96 +170,59 @@ a:hover {
   background: hotpink;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 8px;
   cursor: pointer;
   font-weight: bold;
   border-radius: 0;
 }
 
 .comment-box button:hover {
-  background: deeppink;
+  background: #ff69b4;
 }
 
 .tiny-note {
-  font-size: 12px;
+  font-size: 10px;
   color: #555;
   margin-top: 5px;
 }
 
 /* === MUSIC PLAYER === */
-.player {
-  margin-top: 10px;
-}
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.info span {
-  font-size: 14px;
-  color: hotpink;
-  font-weight: bold;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: #ffc6f5;
-  border: 1px solid hotpink;
-  border-radius: 0;
-  margin-top: 5px;
-}
-
-.progress-bar .bar {
-  width: 0%;
-  height: 100%;
-  background: deeppink;
-}
-
-/* Controls */
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  gap: 5px;
-}
-
-.controls div {
-  width: 20px;
-  height: 20px;
-  background: hotpink;
-  cursor: pointer;
-  border-radius: 0;
-}
-
-.controls .play.pause {
-  background: deeppink;
-}
-
-.track-list {
+.music-box ul.track-list {
   list-style: none;
   padding: 0;
-  margin-top: 10px;
+  margin: 0;
 }
 
 .track-list li {
-  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid hotpink;
+}
+
+.track-list li:last-child {
+  border-bottom: none;
+}
+
+.track button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 5px 10px;
   cursor: pointer;
-  color: hotpink;
-  border: 1px solid hotpink;
-  margin-bottom: 4px;
-  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  font-size: 12px;
   border-radius: 0;
 }
 
-/* Active track */
-.track-list li.active {
-  font-weight: bold;
-  color: deeppink;
+.track button:hover {
+  background: deeppink;
+}
+
+/* === CONTENT === */
+.content {
+  flex-grow: 1;
+  max-width: 800px;
 }
 
 /* === MOBILE === */
@@ -270,20 +240,26 @@ a:hover {
   }
 }
 
-/* === CURSOR SPARKLE === */
+/* === CURSOR SPARKLE TRAIL === */
 .cursor-sparkle {
   position: absolute;
   width: 8px;
   height: 8px;
   background: radial-gradient(circle, #ff69b4, transparent 60%);
   pointer-events: none;
-  animation: sparkleFade 0.6s ease-out forwards;
+  animation: sparkleFade 0.8s ease-out forwards;
   z-index: 9999;
 }
 
 @keyframes sparkleFade {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(1.8); }
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
 
 /* === CUSTOM CURSOR === */
@@ -291,14 +267,13 @@ a:hover {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
 }
 
-/* === HOVER EFFECTS === */
+/* === FUN HOVER COLORS === */
 strong,
 em {
   color: hotpink;
 }
 
 a:hover,
-.track-list li:hover,
-.controls div:hover {
+.track button:hover {
   filter: brightness(1.2);
 }
