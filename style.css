@@ -6,7 +6,10 @@ body {
   margin: 0;
   padding: 0;
   font-size: 12px;
+  cursor: url('https://cur.cursors-4u.net/nature/nat-10/nat985.cur'), auto !important;
 }
+
+a, button { cursor: inherit; }
 
 /* === TOP NAV BAR === */
 .top-bar {
@@ -146,13 +149,13 @@ body {
 /* === CURSOR SPARKLE TRAIL === */
 .cursor-sparkle {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: radial-gradient(circle, #ff69b4 0%, #ffb6e6 50%, transparent 70%);
   pointer-events: none;
   border-radius: 50%;
   animation: sparklePop 0.8s ease-out forwards;
-  box-shadow: 0 0 8px #ff69b4, 0 0 12px #ffb6e6, 0 0 16px pink;
+  box-shadow: 0 0 10px #ff69b4, 0 0 14px #ffb6e6, 0 0 18px pink;
   z-index: 9999;
 }
 
