@@ -1,10 +1,11 @@
+/* === GLOBAL === */
 body {
   background-color: #dcb9d8;
   font-family: "Calibri", sans-serif;
-  font-size: 13px;
   color: #000;
   margin: 0;
   padding: 0;
+  font-size: 13px;
 }
 
 a {
@@ -23,7 +24,7 @@ a:hover {
   background-color: #e9cee5;
   border-bottom: 2px solid hotpink;
   padding: 8px 15px;
-  font-size: 13px;
+  font-size: 12px;
   align-items: center;
 }
 
@@ -67,9 +68,8 @@ a:hover {
   width: 280px;
   min-width: 280px;
   position: sticky;
-  top: 20px;
+  top: 10px;
   align-self: flex-start;
-  height: fit-content;
 }
 
 .content {
@@ -85,7 +85,8 @@ a:hover {
 .about-box,
 .friends-box,
 .posts-box,
-.comment-box {
+.comment-box,
+.post {
   background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
   border: 2px solid hotpink;
   padding: 10px;
@@ -93,59 +94,30 @@ a:hover {
   border-radius: 0;
 }
 
-/* === CENTER TEXT === */
-.center-text {
+.profile-pic,
+.friends-grid img,
+.art-img {
+  width: 100%;
+  border: 2px solid hotpink;
+  border-radius: 0;
+}
+
+/* === HEADER === */
+.header-box h1 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: normal;
   text-align: center;
 }
 
-/* === MUSIC PLAYER === */
-.play-btn {
-  background: hotpink;
-  border: none;
-  color: white;
-  font-size: 14px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 0;
-}
-
-.play-btn:hover {
-  background: deeppink;
-}
-
-.track {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.track .song-name {
-  max-width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* === POSTS === */
-.post {
-  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
-  border: 2px solid hotpink;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 0;
-}
-
-.art-img {
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 0;
-}
-
-.post-footer {
+.about-box h3,
+.friends-box h3,
+.posts-box h3,
+.comment-box h3,
+.info-box h3,
+.music-box h3 {
+  margin-top: 0;
   font-size: 12px;
-  margin-top: 5px;
 }
 
 /* === FRIENDS GRID === */
@@ -155,10 +127,10 @@ a:hover {
   gap: 5px;
 }
 
-.friends-grid img {
-  width: 100%;
-  border: 2px solid hotpink;
-  border-radius: 0;
+/* === POSTS === */
+.post h4 {
+  margin-top: 0;
+  font-size: 13px;
 }
 
 /* === COMMENT BOX === */
@@ -192,31 +164,40 @@ a:hover {
   background: #ff69b4;
 }
 
-.tiny-note {
-  font-size: 10px;
-  color: #555;
-  margin-top: 5px;
+/* === MUSIC PLAYER === */
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* === CURSOR SPARKLE === */
-.cursor-sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #ff69b4, transparent 60%);
-  pointer-events: none;
-  animation: sparkleFade 0.8s ease-out forwards;
-  z-index: 9999;
+.track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  gap: 5px;
 }
 
-@keyframes sparkleFade {
-  from { opacity: 1; transform: scale(1);}
-  to { opacity: 0; transform: scale(2);}
+.track button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 0;
 }
 
-/* === CUSTOM CURSOR === */
-* {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+.track button:hover {
+  background: deeppink;
+}
+
+.song-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
 /* === MOBILE === */
@@ -232,4 +213,36 @@ a:hover {
   .content {
     max-width: 100%;
   }
+}
+
+/* === CURSOR SPARKLE TRAIL === */
+.cursor-sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ff69b4, transparent 60%);
+  pointer-events: none;
+  animation: sparkleFade 0.8s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(2); }
+}
+
+/* === CUSTOM CURSOR === */
+* {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+}
+
+/* === FUN HOVER COLORS === */
+strong,
+em {
+  color: hotpink;
+}
+
+a:hover,
+.track button:hover {
+  filter: brightness(1.2);
 }
