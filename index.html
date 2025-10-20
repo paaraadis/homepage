@@ -1,178 +1,187 @@
-/* === GLOBAL === */
-body {
-  background-color: #dcb9d8;
-  font-family: "Calibri", sans-serif;
-  color: #000;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | MySpace Portfolio ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-a {
-  color: hotpink;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+  <!-- TOP NAV -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span class="myspace-logo">myspace</span>
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Search</a>
+      <a href="#">Invite</a>
+      <a href="#">Rank</a>
+    </div>
+    <div class="top-right">
+      <span>Welcome, <strong>YourName</strong>!</span>
+      <a href="#">Logout</a>
+    </div>
+  </div>
 
-/* === TOP NAV BAR === */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  background-color: #e9cee5;
-  border-bottom: 2px solid hotpink;
-  padding: 8px 15px;
-  font-size: 12px;
-  align-items: center;
-}
+  <div class="container">
 
-.top-left a,
-.top-right a {
-  color: hotpink;
-  margin-left: 10px;
-}
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="profile-box">
+        <img src="images/your-photo.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Your Name</h2>
+        <p>Artist | Illustrator</p>
+        <p><strong>Location:</strong> Your City</p>
+      </div>
 
-.top-left a:first-child {
-  margin-left: 0;
-}
+      <div class="info-box">
+        <h3>Contacting Me</h3>
+        <ul>
+          <li><a href="contact.html">💌 Send Message</a></li>
+          <li><a href="favorites.html">⭐ Add to Favorites</a></li>
+          <li><a href="about.html">🎨 About Me</a></li>
+        </ul>
+      </div>
 
-.top-left .myspace-logo {
-  font-weight: bold;
-  margin-right: 15px;
-  color: hotpink;
-}
+      <div class="info-box">
+        <h3>Interests</h3>
+        <p>Art, Design, Music, Retro Web ✨</p>
+      </div>
 
-.top-right {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+      <!-- SPARKLY STACKED MUSIC PLAYER -->
+      <div class="music-box">
+        <h3>My Playlist 🎧</h3>
 
-/* === LAYOUT === */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 20px auto;
-}
+        <div class="track">
+          <button data-src="music/Charli%20XCX%20–%20Next%20Level%20Charli.m4a">▶</button>
+          <span>Next Level Charli – Charli XCX</span>
+        </div>
+        <div class="track">
+          <button data-src="music/Halsey%20–%20Only%20Living%20Girl%20in%20LA.mp3">▶</button>
+          <span>Only Living Girl in LA – Halsey</span>
+        </div>
+        <div class="track">
+          <button data-src="music/Julia%20Wolf%20–%20In%20My%20Room%20(Badger%20Remix).m4a">▶</button>
+          <span>In My Room (Badger Remix) – Julia Wolf</span>
+        </div>
+        <div class="track">
+          <button data-src="music/Kim%20Petras%20–%20I%20Like%20Ur%20Look.m4a">▶</button>
+          <span>I Like Ur Look – Kim Petras</span>
+        </div>
+        <div class="track">
+          <button data-src="music/PinkPantheress%20&%20Rachel%20Chinouriri%20–%20Romeo%20+%20Rachel%20Chinouriri.mp3">▶</button>
+          <span>Romeo + Rachel Chinouriri – PinkPantheress & Rachel Chinouriri</span>
+        </div>
+        <div class="track">
+          <button data-src="music/Hayley%20Williams%20–%20Ego%20Death%20At%20A%20Bachelorette%20Party.mp3">▶</button>
+          <span>Ego Death At A Bachelorette Party – Hayley Williams</span>
+        </div>
 
-.sidebar {
-  width: 280px;
-  min-width: 280px;
-}
+        <!-- Hidden audio player -->
+        <audio id="audio-player" style="display:none;"></audio>
+      </div>
+    </div>
 
-.profile-box,
-.info-box,
-.music-box,
-.header-box,
-.about-box,
-.friends-box,
-.posts-box,
-.comment-box {
-  background-color: #e9cee5;
-  border: 2px solid hotpink;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 0;
-}
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <div class="header-box">
+        <h1>Your Name is in your extended network 💖</h1>
+      </div>
 
-.profile-pic {
-  width: 100%;
-  border: 2px solid hotpink;
-  margin-bottom: 10px;
-  border-radius: 0;
-}
+      <div class="about-box">
+        <h3>About Me</h3>
+        <p>Welcome to my art portfolio — I love creating nostalgic, surreal, and dreamy pieces.</p>
+      </div>
 
-.music-box {
-  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
-  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
-  animation: sparkleBorder 3s infinite ease-in-out;
-}
+      <div class="friends-box">
+        <h3>Top 8 Favorites</h3>
+        <div class="friends-grid">
+          <img src="images/art1.jpg" alt="Friend 1">
+          <img src="images/art2.jpg" alt="Friend 2">
+          <img src="images/art3.jpg" alt="Friend 3">
+          <img src="images/art4.jpg" alt="Friend 4">
+          <img src="images/art5.jpg" alt="Friend 5">
+          <img src="images/art6.jpg" alt="Friend 6">
+          <img src="images/art7.jpg" alt="Friend 7">
+          <img src="images/art8.jpg" alt="Friend 8">
+        </div>
+      </div>
 
-@keyframes sparkleBorder {
-  0% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
-  50% { box-shadow: 0 0 15px deeppink, 0 0 30px hotpink; }
-  100% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
-}
+      <div class="posts-box">
+        <h3>Latest Posts ✨</h3>
+        <div class="post">
+          <h4>“Soft Light”</h4>
+          <img src="images/art1.jpg" alt="Artwork 1" class="art-img">
+          <p>My latest illustration exploring surreal dreamscapes.</p>
+        </div>
+        <div class="post">
+          <h4>“The Garden”</h4>
+          <img src="images/art2.jpg" alt="Artwork 2" class="art-img">
+          <p>Digital painting inspired by retro floral patterns.</p>
+        </div>
+      </div>
 
-.content {
-  flex-grow: 1;
-  max-width: 800px;
-}
+      <div id="contact" class="comment-box">
+        <h3>Leave a Comment or Message 💬</h3>
+        <form action="https://formspree.io/f/mnngyaga" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
+      </div>
+    </div>
+  </div>
 
-/* === FRIENDS GRID === */
-.friends-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-}
-.friends-grid img {
-  width: 100%;
-  border: 2px solid hotpink;
-  border-radius: 0;
-}
+  <!-- CURSOR SPARKLE TRAIL AND MUSIC JS -->
+  <script>
+    // Cursor sparkle trail
+    document.addEventListener('mousemove', e => {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'cursor-sparkle';
+      sparkle.style.left = (e.clientX - 5) + 'px';
+      sparkle.style.top = (e.clientY - 5) + 'px';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 800);
+    });
 
-/* === POSTS === */
-.post {
-  background-color: #fff;
-  border: 2px solid hotpink;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 0;
-}
-.art-img {
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 0;
-}
+    const player = document.getElementById('audio-player');
+    const trackButtons = document.querySelectorAll('.track button');
 
-/* === COMMENT BOX === */
-.comment-box input,
-.comment-box textarea,
-.comment-box button {
-  border-radius: 0;
-}
-.comment-box button:hover {
-  background: #ff69b4;
-}
+    function playTrack(src, btn) {
+      if (player.src !== src) {
+        player.src = src;
+        player.play();
+        updateButtons(btn);
+      } else {
+        if (player.paused) {
+          player.play();
+          btn.textContent = '⏸';
+        } else {
+          player.pause();
+          btn.textContent = '▶';
+        }
+      }
+    }
 
-/* === MUSIC PLAYER BUTTONS === */
-.track button {
-  background: hotpink;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  border-radius: 0;
-}
-.track button:hover { background: deeppink; }
+    function updateButtons(activeBtn) {
+      trackButtons.forEach(btn => {
+        btn.textContent = (btn === activeBtn) ? '⏸' : '▶';
+      });
+    }
 
-/* === CURSOR SPARKLE === */
-.cursor-sparkle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, #ff69b4, transparent 60%);
-  pointer-events: none;
-  animation: sparkleFade 1s ease-out forwards;
-  z-index: 9999;
-}
-@keyframes sparkleFade {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(2); }
-}
+    trackButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-src');
+        playTrack(src, btn);
+      });
+    });
 
-/* === CUSTOM CURSOR === */
-* { cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important; }
+    player.addEventListener('ended', () => {
+      trackButtons.forEach(btn => btn.textContent = '▶');
+    });
+  </script>
 
-/* === MOBILE === */
-@media(max-width:800px){
-  .container{flex-direction:column;align-items:center;}
-  .sidebar{width:100%; max-width:500px;}
-  .content{max-width:100%;}
-}
+</body>
+</html>
