@@ -11,7 +11,7 @@
   <div class="top-bar">
     <div class="top-left">
       <span class="myspace-logo">myspace</span>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="#">Browse</a>
       <a href="#">Search</a>
       <a href="#">Invite</a>
@@ -53,12 +53,12 @@
       <div class="music-box">
         <h3>My Playlist 🎧</h3>
         <ul class="playlist">
-          <li class="track"><button data-song="music/Charli XCX – Next Level Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
-          <li class="track"><button data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
-          <li class="track"><button data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
-          <li class="track"><button data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
-          <li class="track"><button data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li>
-          <li class="track"><button data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
+          <li class="track"><button data-song="music/Charli_XCX_Next_Level_Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
+          <li class="track"><button data-song="music/Halsey_Only_Living_Girl_in_LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
+          <li class="track"><button data-song="music/Julia_Wolf_In_My_Room_Badger_Remix.m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
+          <li class="track"><button data-song="music/Kim_Petras_I_Like_Ur_Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
+          <li class="track"><button data-song="music/PinkPantheress_Rachel_Chinouriri_Romeo.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li>
+          <li class="track"><button data-song="music/Hayley_Williams_Ego_Death_At_A_Bachelorette_Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
         </ul>
         <audio id="audio-player" controls style="display:none;"></audio>
       </div>
@@ -125,7 +125,7 @@
       sparkle.style.left = e.pageX + 'px';
       sparkle.style.top = e.pageY + 'px';
       document.body.appendChild(sparkle);
-      setTimeout(()=> sparkle.remove(), 800);
+      setTimeout(() => sparkle.remove(), 500); // fast fade
     });
 
     // Music Player Logic
