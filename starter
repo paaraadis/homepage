@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>✨ My Myspace Throwback ✨</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    💖 Welcome to my Myspace-style portfolio 💖
+  </marquee>
+
+  <div id="profile-wrapper">
+    <header>
+      <h1>🌸 Your Name 🌸</h1>
+      <p class="tagline">"Retro vibes only"</p>
+    </header>
+
+    <section id="main-info">
+      <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
+      <div class="about">
+        <h2>About Me</h2>
+        <p>Hey! I’m a creative human who loves building weird little corners of the internet.</p>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Top Projects 🌟</h2>
+      <ul>
+        <li><a href="#">✨ Project 1 ✨</a></li>
+        <li><a href="#">🕹 Project 2 🕹</a></li>
+        <li><a href="#">💻 Project 3 💻</a></li>
+      </ul>
+    </section>
+
+    <section id="music-player">
+      <h2>🎧 Now Playing</h2>
+      <audio controls autoplay loop>
+        <source src="your-song.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <footer>
+      <p>Made with ❤️ + glitter ✨</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
