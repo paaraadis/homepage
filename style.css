@@ -1,11 +1,10 @@
-/* === GLOBAL === */
 body {
   background-color: #dcb9d8;
   font-family: "Calibri", sans-serif;
+  font-size: 13px;
   color: #000;
   margin: 0;
   padding: 0;
-  font-size: 13px;
 }
 
 a {
@@ -75,10 +74,10 @@ a:hover {
 
 .content {
   flex-grow: 1;
-  max-width: 600px;
+  max-width: 500px;
 }
 
-/* === BOXES WITH STATIC GRADIENT === */
+/* === BOXES === */
 .profile-box,
 .info-box,
 .music-box,
@@ -94,7 +93,12 @@ a:hover {
   border-radius: 0;
 }
 
-/* === MUSIC PLAYER BUTTONS === */
+/* === CENTER TEXT === */
+.center-text {
+  text-align: center;
+}
+
+/* === MUSIC PLAYER === */
 .play-btn {
   background: hotpink;
   border: none;
@@ -140,7 +144,7 @@ a:hover {
 }
 
 .post-footer {
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 5px;
 }
 
@@ -152,4 +156,80 @@ a:hover {
 }
 
 .friends-grid img {
-  width: 
+  width: 100%;
+  border: 2px solid hotpink;
+  border-radius: 0;
+}
+
+/* === COMMENT BOX === */
+.comment-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-box input,
+.comment-box textarea {
+  padding: 6px;
+  border: 1px solid hotpink;
+  background: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  border-radius: 0;
+}
+
+.comment-box button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.comment-box button:hover {
+  background: #ff69b4;
+}
+
+.tiny-note {
+  font-size: 10px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* === CURSOR SPARKLE === */
+.cursor-sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ff69b4, transparent 60%);
+  pointer-events: none;
+  animation: sparkleFade 0.8s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  from { opacity: 1; transform: scale(1);}
+  to { opacity: 0; transform: scale(2);}
+}
+
+/* === CUSTOM CURSOR === */
+* {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+}
+
+/* === MOBILE === */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: 500px;
+  }
+  .content {
+    max-width: 100%;
+  }
+}
