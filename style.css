@@ -88,18 +88,15 @@ a:hover {
 .comment-box,
 .post {
   background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
-  border: 2px solid hotpink;
+  border: 3px solid transparent;
+  background-image: 
+    linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%),
+    linear-gradient(135deg, #ffb6d9, #ff69b4, #ff1493, #ff69b4, #ffb6d9);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 0;
-}
-
-.profile-pic,
-.friends-grid img,
-.art-img {
-  width: 100%;
-  border: 2px solid hotpink;
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 /* === HEADER === */
@@ -246,3 +243,4 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
