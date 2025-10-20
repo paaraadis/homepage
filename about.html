@@ -7,72 +7,66 @@
 </head>
 <body>
 
-  <div class="top-bar">
-    <div class="top-left">
-      <span class="myspace-logo">myspace</span>
-      <a href="index.html">Home</a>
-      <a href="#">Browse</a>
-      <a href="#">Search</a>
-      <a href="#">Invite</a>
-      <a href="#">Rank</a>
+<!-- TOP NAV BAR -->
+<div class="top-bar">
+  <div class="top-left">
+    <span class="myspace-logo">myspace</span>
+    <a href="#">Home</a>
+    <a href="#">Browse</a>
+    <a href="#">Search</a>
+    <a href="#">Invite</a>
+    <a href="#">Rank</a>
+  </div>
+  <div class="top-right">
+    <span>Welcome, <strong>YourName</strong>!</span>
+    <a href="#">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="profile-box">
+      <img src="images/your-photo.jpg" alt="Profile Picture" class="profile-pic">
+      <h2>Your Name</h2>
+      <p>Artist | Illustrator</p>
+      <p><strong>Location:</strong> Your City</p>
     </div>
-    <div class="top-right">
-      <span>Welcome, <strong>YourName</strong>!</span>
-      <a href="#">Logout</a>
+
+    <div class="info-box">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="about.html">🎨 About Me</a></li>
+        <li><a href="favorites.html">⭐ Favorites</a></li>
+        <li><a href="contact.html">💌 Contact</a></li>
+      </ul>
     </div>
+
   </div>
 
-  <div class="container">
-
-    <div class="sidebar">
-      <div class="profile-box">
-        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
-        <h2>Your Name</h2>
-        <p>Artist | Illustrator</p>
-        <p><strong>Location:</strong> Your City</p>
-      </div>
-
-      <div class="info-box">
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="index.html">🏠 Home</a></li>
-          <li><a href="about.html">🎀 About Me</a></li>
-          <li><a href="favorites.html">⭐ Favorites</a></li>
-          <li><a href="contact.html">💌 Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="info-box">
-        <h3>Interests</h3>
-        <p>Art, Design, Music, Retro Web ✨</p>
-      </div>
-
-      <div class="music-box">
-        <h3>My Playlist 🎧</h3>
-        <ul class="playlist">
-          <li class="track"><button data-song="music/Charli_XCX_Next_Level_Charli.m4a">▶</button> Charli XCX – Next Level Charli</li><br>
-          <li class="track"><button data-song="music/Halsey_Only_Living_Girl_in_LA.mp3">▶</button> Halsey – Only Living Girl in LA</li><br>
-          <li class="track"><button data-song="music/Julia_Wolf_In_My_Room_Badger_Remix.m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li><br>
-          <li class="track"><button data-song="music/Kim_Petras_I_Like_Ur_Look.m4a">▶</button> Kim Petras – I Like Ur Look</li><br>
-          <li class="track"><button data-song="music/PinkPantheress_Rachel_Chinouriri_Romeo.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li><br>
-          <li class="track"><button data-song="music/Hayley_Williams_Ego_Death_At_A_Bachelorette_Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
-        </ul>
-        <audio id="audio-player" controls style="display:none;"></audio>
-      </div>
+  <!-- RIGHT CONTENT -->
+  <div class="content">
+    <div class="header-box">
+      <h1>About Me 💖</h1>
     </div>
 
-    <div class="content">
-      <div class="header-box">
-        <h1>About Me 💖</h1>
-      </div>
+    <div class="about-box">
+      <h3>Bio</h3>
+      <p>Hello! I'm an artist who loves creating nostalgic, dreamy, and surreal pieces. Here you can add your bio, share your favorite art mediums, inspirations, and showcase photos of your work.</p>
+    </div>
 
-      <div class="about-box">
-        <p>Hello! I’m an artist passionate about creating nostalgic, dreamy, and surreal illustrations. On this page, you can see my journey, inspirations, and the stories behind my work. 💕</p>
-        <img src="about-photo.jpg" alt="About me photo" class="art-img">
-      </div>
+    <div class="about-box">
+      <h3>Gallery</h3>
+      <img src="images/art1.jpg" class="art-img" alt="Artwork 1">
+      <img src="images/art2.jpg" class="art-img" alt="Artwork 2">
+      <img src="images/art3.jpg" class="art-img" alt="Artwork 3">
     </div>
   </div>
+</div>
 
-  <script src="music-player.js"></script>
+<script src="music-player.js"></script>
 </body>
 </html>
