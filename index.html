@@ -105,36 +105,4 @@
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Send</button>
         </form>
-        <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- === SPARKLE BACKGROUND & CURSOR TRAIL === -->
-  <script>
-    // Background sparkles
-    const sparkleContainer = document.createElement('div');
-    sparkleContainer.className = 'sparkle-container';
-    document.body.appendChild(sparkleContainer);
-    for(let i=0;i<30;i++){
-      let s = document.createElement('div');
-      s.className = 'sparkle';
-      s.style.left = Math.random()*100+'%';
-      s.style.animationDuration = (2+Math.random()*3)+'s';
-      sparkleContainer.appendChild(s);
-    }
-
-    // Cursor sparkle trail
-    document.addEventListener('mousemove', e => {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'cursor-sparkle';
-      sparkle.style.left = e.pageX+'px';
-      sparkle.style.top = e.pageY+'px';
-      document.body.appendChild(sparkle);
-      setTimeout(()=>sparkle.remove(), 1000);
-    });
-  </script>
-
-</body>
-</html>
+        <p class="tiny-note">Your message will
