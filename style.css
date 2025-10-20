@@ -27,9 +27,6 @@ a:hover {
   padding: 8px 15px;
   font-size: 12px;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .top-left a,
@@ -291,6 +288,7 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 
 
 
