@@ -127,6 +127,23 @@ a:hover {
 .post h4 {
   margin-top: 0;
   font-size: 13px;
+
+  
+}
+
+/* ADD THIS NEW CODE */
+.post-stats {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #666;
+}
+
+.post-stats span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 /* === COMMENT BOX === */
@@ -267,6 +284,7 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 
 
 
