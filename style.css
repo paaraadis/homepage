@@ -5,7 +5,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 a {
@@ -75,7 +75,7 @@ a:hover {
 
 .content {
   flex-grow: 1;
-  max-width: 800px; /* prevents content from stretching too far */
+  max-width: 800px;
 }
 
 /* === BOXES === */
@@ -111,7 +111,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* === SPARKLY MUSIC PLAYER === */
+/* === STATIC GRADIENT MUSIC PLAYER === */
 .music-box {
   border: 2px solid hotpink;
   background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
