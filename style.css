@@ -1,10 +1,7 @@
-/* === IMPORT FUN FONT === */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
 /* === GLOBAL === */
 body {
   background-color: #dcb9d8;
-  font-family: "Verdana", sans-serif;
+  font-family: "Calibri", sans-serif;
   color: #000;
   margin: 0;
   padding: 0;
@@ -14,27 +11,64 @@ body {
 
 a, button { cursor: inherit; }
 
-/* === FUN HEADINGS === */
-h1, h2, h3, h4 {
-  font-family: 'Fredoka One', sans-serif;
-  color: hotpink;
+/* === LAYOUT === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
-/* === LAYOUT BOXES === */
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+}
+
+.content {
+  flex-grow: 1;
+  max-width: 800px;
+}
+
+/* === TOP NAV BAR === */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e9cee5;
+  border-bottom: 2px solid hotpink;
+  padding: 8px 15px;
+  font-size: 12px;
+  align-items: center;
+}
+
+.top-left a,
+.top-right a {
+  text-decoration: none;
+  color: hotpink;
+  margin-left: 10px;
+}
+
+.top-left a:first-child { margin-left: 0; }
+
+.top-left .myspace-logo { font-weight: bold; margin-right: 15px; color: hotpink; }
+
+.top-right { display: flex; gap: 10px; align-items: center; }
+
+.top-right span { color: #000; }
+
+/* === BOXES === */
 .profile-box, .info-box, .music-box,
-.header-box, .about-box, .friends-box, .posts-box, .comment-box,
-.speech-bubble, .favorites-box {
+.header-box, .about-box, .friends-box, .posts-box, .comment-box {
   background-color: #e9cee5;
   border: 2px solid hotpink;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 15px;
-  box-shadow: 0 4px 12px rgba(255,182,230,0.4);
   position: relative;
-  overflow: hidden;
 }
 
-/* === SUBTLE ANIMATED SPARKLE BORDER === */
+/* === SPARKLE BORDER ANIMATION === */
 @keyframes sparkleBorder {
   0% { box-shadow: 0 0 4px hotpink, 0 0 8px #ffb6e6; }
   50% { box-shadow: 0 0 8px #ff69b4, 0 0 16px #ffc6f5; }
@@ -42,8 +76,7 @@ h1, h2, h3, h4 {
 }
 
 .profile-box, .info-box, .music-box,
-.header-box, .about-box, .friends-box, .posts-box, .comment-box,
-.speech-bubble, .favorites-box {
+.header-box, .about-box, .friends-box, .posts-box, .comment-box {
   animation: sparkleBorder 3s infinite ease-in-out;
 }
 
@@ -59,37 +92,20 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
-/* === COLORED / GLITTER TEXT === */
-.highlight {
-  background: linear-gradient(45deg, #ffb6e6, #ffc6f5, #ff69b4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* === SIDEBAR LINKS === */
+.info-box ul { list-style: none; padding: 0; margin: 0; }
+.info-box ul li { margin: 5px 0; }
+.info-box a { text-decoration: none; color: hotpink; }
 
-/* === MUSIC PLAYER === */
-.music-box {
-  position: sticky;
-  top: 20px;
-  background: linear-gradient(135deg, #ffb6e6 0%, #ffc6f5 50%, #ff69b4 100%);
-  border: 2px solid hotpink;
-  box-shadow: 0 0 15px hotpink, 0 0 25px pink;
-}
-
-.music-box audio {
-  width: 100%;
-  margin-bottom: 5px;
-  outline: none;
-}
-
-/* === FRIENDS / TOP 8 === */
+/* === FRIENDS GRID === */
 .friends-grid {
   display: grid;
-  grid-template-columns: repeat(4, 60px);
+  grid-template-columns: repeat(4, 1fr);
   gap: 5px;
 }
 
 .friends-grid img {
-  width: 60px; height: 60px;
+  width: 100%;
   border: 2px solid hotpink;
   border-radius: 8px;
 }
@@ -162,43 +178,31 @@ a:hover {
   100% { transform: scale(2) rotate(180deg); opacity: 0; }
 }
 
-/* === PIXEL SPEECH BUBBLE === */
-.speech-bubble {
-  position: relative;
-  background: #ffc6f5;
+/* === MUSIC PLAYER === */
+.music-box {
+  background: linear-gradient(135deg, #ffb6e6 0%, #ffc6f5 50%, #ff69b4 100%);
   border: 2px solid hotpink;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  font-size: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px hotpink, 0 0 25px pink;
 }
 
-.speech-bubble:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 30px;
-  border-width: 10px 10px 0;
-  border-style: solid;
-  border-color: #ffc6f5 transparent transparent transparent;
-}
-
-/* === FAVORITES PAGE HEARTS === */
-.favorites-box {
+.music-box .track {
   display: flex;
+  align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
-.favorites-box img {
-  width: 80px;
-  height: 80px;
-  border: 2px solid hotpink;
+.music-box .track span {
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px #ffb6e6;
+}
+
+.music-box audio {
+  flex-grow: 1;
+  outline: none;
   border-radius: 6px;
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.favorites-box img:hover {
-  transform: scale(1.1) rotate(-5deg);
+  background: rgba(255, 255, 255, 0.2);
 }
