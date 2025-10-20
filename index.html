@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>✨ My Myspace Page ✨</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>My MySpace Portfolio ✨</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 🐰 Custom Cursor -->
-  <style>
-    * {
-      cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
-    }
-  </style>
-  <a href="https://www.cursors-4u.com/cursor/2011/12/29/tiny-bunny.html" target="_blank" title="Tiny Bunny">
-    <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Tiny Bunny" style="position:absolute; top:0; right:0;" />
-  </a>
-
-  <!-- 🌸 Top Navigation -->
+  <!-- 🌟 Top Navigation Bar -->
   <div class="top-bar">
     <div class="top-left">
       <span class="myspace-logo">myspace</span>
@@ -34,13 +23,11 @@
     </div>
   </div>
 
-  <!-- 🌼 Main Layout -->
   <div class="container">
-
-    <!-- 🩷 Sidebar -->
+    <!-- 🧸 Sidebar -->
     <div class="sidebar">
       <div class="profile-box">
-        <img src="images/your-photo.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
         <h2>Your Name</h2>
         <p>Artist | Illustrator</p>
         <p><strong>Location:</strong> Your City</p>
@@ -50,28 +37,51 @@
         <h3>Navigation</h3>
         <ul>
           <li><a href="index.html">🏠 Home</a></li>
-          <li><a href="about.html">💖 About Me</a></li>
-          <li><a href="photos.html">📸 Photos</a></li>
+          <li><a href="about.html">🎀 About Me</a></li>
+          <li><a href="favorites.html">⭐ Favorites</a></li>
           <li><a href="contact.html">💌 Contact</a></li>
         </ul>
       </div>
 
-      <!-- 🎧 Classic Myspace-style Player -->
+      <div class="info-box">
+        <h3>Interests</h3>
+        <p>Art, Design, Music, Retro Web ✨</p>
+      </div>
+
+      <!-- 🎧 Classic MySpace-Style Music Player -->
       <div class="music-box sparkly-border">
-        <h3>My Playlist 🎧</h3>
+        <h3>My Playlist</h3>
         <ul class="playlist">
-          <li><button class="play-btn" data-file="music/Charli XCX – Next Level Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
-          <li><button class="play-btn" data-file="music/Halsey – Only Living Girl in LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
-          <li><button class="play-btn" data-file="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
-          <li><button class="play-btn" data-file="music/Kim Petras – I Like Ur Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
-          <li><button class="play-btn" data-file="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri</li>
-          <li><button class="play-btn" data-file="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
+          <li>
+            <button class="play-btn" data-song="music/Charli XCX – Next Level Charli.m4a">▶</button>
+            Charli XCX – Next Level Charli
+          </li>
+          <li>
+            <button class="play-btn" data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button>
+            Halsey – Only Living Girl in LA
+          </li>
+          <li>
+            <button class="play-btn" data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button>
+            Julia Wolf – In My Room (Badger Remix)
+          </li>
+          <li>
+            <button class="play-btn" data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button>
+            Kim Petras – I Like Ur Look
+          </li>
+          <li>
+            <button class="play-btn" data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button>
+            PinkPantheress & Rachel Chinouriri – Romeo
+          </li>
+          <li>
+            <button class="play-btn" data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button>
+            Hayley Williams – Ego Death At A Bachelorette Party
+          </li>
         </ul>
-        <audio id="audio-player" controls style="display:none;"></audio>
+        <audio id="audio-player" controls style="display: none;"></audio>
       </div>
     </div>
 
-    <!-- 🌟 Content -->
+    <!-- 🌸 Main Content -->
     <div class="content">
       <div class="header-box">
         <h1>Your Name is in your extended network 💖</h1>
@@ -85,29 +95,28 @@
       <div class="friends-box">
         <h3>Top 8 Favorites</h3>
         <div class="friends-grid">
-          <img src="images/art1.jpg" alt="Friend 1">
-          <img src="images/art2.jpg" alt="Friend 2">
-          <img src="images/art3.jpg" alt="Friend 3">
-          <img src="images/art4.jpg" alt="Friend 4">
-          <img src="images/art5.jpg" alt="Friend 5">
-          <img src="images/art6.jpg" alt="Friend 6">
-          <img src="images/art7.jpg" alt="Friend 7">
-          <img src="images/art8.jpg" alt="Friend 8">
+          <img src="art1.jpg" alt="1">
+          <img src="art2.jpg" alt="2">
+          <img src="art3.jpg" alt="3">
+          <img src="art4.jpg" alt="4">
+          <img src="art5.jpg" alt="5">
+          <img src="art6.jpg" alt="6">
+          <img src="art7.jpg" alt="7">
+          <img src="art8.jpg" alt="8">
         </div>
       </div>
 
       <div class="posts-box">
         <h3>Latest Posts ✨</h3>
-
         <div class="post">
           <h4>“Soft Light”</h4>
-          <img src="images/art1.jpg" alt="Artwork 1" class="art-img">
+          <img src="art1.jpg" alt="Artwork 1" class="art-img">
           <p>My latest illustration exploring surreal dreamscapes.</p>
         </div>
 
         <div class="post">
           <h4>“The Garden”</h4>
-          <img src="images/art2.jpg" alt="Artwork 2" class="art-img">
+          <img src="art2.jpg" alt="Artwork 2" class="art-img">
           <p>Digital painting inspired by retro floral patterns.</p>
         </div>
       </div>
@@ -126,35 +135,49 @@
   </div>
 
   <script>
+    // ✨ Sparkly Cursor
+    const cursorSparkle = document.createElement('div');
+    cursorSparkle.className = 'cursor-sparkle';
+    document.body.appendChild(cursorSparkle);
+
+    document.addEventListener('mousemove', (e) => {
+      cursorSparkle.style.left = e.pageX + 'px';
+      cursorSparkle.style.top = e.pageY + 'px';
+    });
+
+    // 🎧 MySpace Player Logic
+    const audio = document.getElementById('audio-player');
     const buttons = document.querySelectorAll('.play-btn');
-    const player = document.getElementById('audio-player');
     let currentButton = null;
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
-        const file = button.getAttribute('data-file');
-
+        const song = button.getAttribute('data-song');
         if (currentButton && currentButton !== button) {
           currentButton.textContent = '▶';
         }
-
-        if (player.src.includes(file) && !player.paused) {
-          player.pause();
+        if (audio.src.includes(song) && !audio.paused) {
+          audio.pause();
           button.textContent = '▶';
         } else {
-          player.src = file;
-          player.play();
+          audio.src = song;
+          audio.play();
           button.textContent = '⏸';
           currentButton = button;
         }
       });
     });
 
-    player.addEventListener('ended', () => {
-      if (currentButton) {
-        currentButton.textContent = '▶';
-      }
+    audio.addEventListener('ended', () => {
+      if (currentButton) currentButton.textContent = '▶';
     });
   </script>
+
+  <!-- 🐰 Custom Cursor -->
+  <style>
+    * {
+      cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+    }
+  </style>
 </body>
 </html>
