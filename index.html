@@ -53,27 +53,27 @@
         <h3>My Playlist 🎧</h3>
 
         <div class="track">
-          <button onclick="playTrack('music/Charli%20XCX%20–%20Next%20Level%20Charli.m4a')">▶</button>
+          <button data-src="music/Charli%20XCX%20–%20Next%20Level%20Charli.m4a">▶</button>
           <span>Next Level Charli – Charli XCX</span>
         </div>
         <div class="track">
-          <button onclick="playTrack('music/Halsey%20–%20Only%20Living%20Girl%20in%20LA.mp3')">▶</button>
+          <button data-src="music/Halsey%20–%20Only%20Living%20Girl%20in%20LA.mp3">▶</button>
           <span>Only Living Girl in LA – Halsey</span>
         </div>
         <div class="track">
-          <button onclick="playTrack('music/Julia%20Wolf%20–%20In%20My%20Room%20(Badger%20Remix).m4a')">▶</button>
+          <button data-src="music/Julia%20Wolf%20–%20In%20My%20Room%20(Badger%20Remix).m4a">▶</button>
           <span>In My Room (Badger Remix) – Julia Wolf</span>
         </div>
         <div class="track">
-          <button onclick="playTrack('music/Kim%20Petras%20–%20I%20Like%20Ur%20Look.m4a')">▶</button>
+          <button data-src="music/Kim%20Petras%20–%20I%20Like%20Ur%20Look.m4a">▶</button>
           <span>I Like Ur Look – Kim Petras</span>
         </div>
         <div class="track">
-          <button onclick="playTrack('music/PinkPantheress%20&%20Rachel%20Chinouriri%20–%20Romeo%20+%20Rachel%20Chinouriri.mp3')">▶</button>
+          <button data-src="music/PinkPantheress%20&%20Rachel%20Chinouriri%20–%20Romeo%20+%20Rachel%20Chinouriri.mp3">▶</button>
           <span>Romeo + Rachel Chinouriri – PinkPantheress & Rachel Chinouriri</span>
         </div>
         <div class="track">
-          <button onclick="playTrack('music/Hayley%20Williams%20–%20Ego%20Death%20At%20A%20Bachelorette%20Party.mp3')">▶</button>
+          <button data-src="music/Hayley%20Williams%20–%20Ego%20Death%20At%20A%20Bachelorette%20Party.mp3">▶</button>
           <span>Ego Death At A Bachelorette Party – Hayley Williams</span>
         </div>
 
@@ -134,8 +134,9 @@
     </div>
   </div>
 
-  <!-- CURSOR SPARKLE TRAIL -->
+  <!-- CURSOR SPARKLE TRAIL AND MUSIC JS -->
   <script>
+    // Cursor sparkle trail
     document.addEventListener('mousemove', e => {
       const sparkle = document.createElement('div');
       sparkle.className = 'cursor-sparkle';
@@ -145,11 +146,43 @@
       setTimeout(() => sparkle.remove(), 800);
     });
 
-    function playTrack(src) {
-      const player = document.getElementById('audio-player');
-      player.src = src;
-      player.play();
+    const player = document.getElementById('audio-player');
+    const trackButtons = document.querySelectorAll('.track button');
+
+    function playTrack(src, btn) {
+      if (player.src !== src) {
+        player.src = src;
+        player.play();
+        updateButtons(btn);
+      } else {
+        if (player.paused) {
+          player.play();
+          btn.textContent = '⏸';
+        } else {
+          player.pause();
+          btn.textContent = '▶';
+        }
+      }
     }
+
+    function updateButtons(activeBtn) {
+      trackButtons.forEach(btn => {
+        btn.textContent = (btn === activeBtn) ? '⏸' : '▶';
+      });
+    }
+
+    // Add click events to each track button
+    trackButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-src');
+        playTrack(src, btn);
+      });
+    });
+
+    // Reset button when track ends
+    player.addEventListener('ended', () => {
+      trackButtons.forEach(btn => btn.textContent = '▶');
+    });
   </script>
 
 </body>
