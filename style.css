@@ -288,6 +288,92 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+/* === MYSPACE FEATURES === */
+
+/* Online Status */
+.online-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: green;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #00ff00;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Mood Status */
+.mood-status {
+  margin: 10px 0;
+  font-size: 12px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-left: 3px solid hotpink;
+}
+
+/* Profile Stats */
+.profile-stats {
+  margin: 10px 0;
+  font-size: 11px;
+  color: #333;
+}
+
+.profile-stats p {
+  margin: 5px 0;
+}
+
+/* Profile Buttons */
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.myspace-btn {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 0;
+  border: 2px solid deeppink;
+}
+
+.myspace-btn:hover {
+  background: deeppink;
+  transform: scale(1.02);
+}
+
+/* Marquee */
+.marquee-container {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border-top: 2px solid hotpink;
+  border-bottom: 2px solid hotpink;
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: hotpink;
+}
+
+marquee {
+  margin: 0;
+}
 
 
 
