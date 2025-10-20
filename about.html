@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me | MySpace Portfolio ✨</title>
+  <title>About Me ✨</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TOP NAV -->
   <div class="top-bar">
     <div class="top-left">
       <span class="myspace-logo">myspace</span>
@@ -24,7 +23,7 @@
   </div>
 
   <div class="container">
-    <!-- SIDEBAR -->
+    <!-- Sidebar -->
     <div class="sidebar">
       <div class="profile-box">
         <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
@@ -34,40 +33,80 @@
       </div>
 
       <div class="info-box">
-        <h3>Contacting Me</h3>
+        <h3>Navigation</h3>
         <ul>
-          <li><a href="contact.html">💌 Send Message</a></li>
-          <li><a href="favorites.html">⭐ Add to Favorites</a></li>
-          <li><a href="about.html">🎨 About Me</a></li>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="about.html">🎀 About Me</a></li>
+          <li><a href="favorites.html">⭐ Favorites</a></li>
+          <li><a href="contact.html">💌 Contact</a></li>
         </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>Interests</h3>
+        <p>Art, Design, Music, Retro Web ✨</p>
+      </div>
+
+      <!-- Music Player -->
+      <div class="music-box">
+        <h3>My Playlist</h3>
+        <ul class="playlist">
+          <li><button class="play-btn" data-song="music/Charli XCX – Next Level Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
+          <li><button class="play-btn" data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
+          <li><button class="play-btn" data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
+          <li><button class="play-btn" data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
+          <li><button class="play-btn" data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li>
+          <li><button class="play-btn" data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
+        </ul>
+        <audio id="audio-player" controls style="display:none;"></audio>
       </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- Content -->
     <div class="content">
-      <div class="header-box">
-        <h1>About Me 💖</h1>
-      </div>
-
-      <div class="speech-bubble">
-        <p>Hello! I’m <span class="highlight">Your Name</span>, an artist passionate about <span class="highlight">nostalgic</span> and <span class="highlight">dreamy</span> creations. Here’s a little gallery of my favorite works and some info about me!</p>
-        <img src="art1.jpg" alt="Art Example" class="art-img">
-        <img src="art2.jpg" alt="Art Example" class="art-img">
+      <div class="about-box">
+        <h3>About Me</h3>
+        <p>Hi! I'm an artist and illustrator who loves retro aesthetics, surreal dreamscapes, and nostalgic vibes. Here you can find a collection of my works and inspirations.</p>
+        <p>Feel free to browse my portfolio, check out my favorites, and leave a comment 💖</p>
       </div>
     </div>
   </div>
 
-  <!-- CURSOR SPARKLE -->
   <script>
+    // Sparkly Cursor
+    const cursorSparkle = document.createElement('div');
+    cursorSparkle.className = 'cursor-sparkle';
+    document.body.appendChild(cursorSparkle);
     document.addEventListener('mousemove', e => {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'cursor-sparkle';
-      sparkle.style.left = (e.clientX - 5) + 'px';
-      sparkle.style.top = (e.clientY - 5) + 'px';
-      document.body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 800);
+      cursorSparkle.style.left = e.pageX + 'px';
+      cursorSparkle.style.top = e.pageY + 'px';
     });
+
+    // Music Player Logic
+    const audio = document.getElementById('audio-player');
+    const buttons = document.querySelectorAll('.play-btn');
+    let currentButton = null;
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const song = button.dataset.song;
+        if(currentButton && currentButton !== button) currentButton.textContent = '▶';
+        if(audio.src.includes(song) && !audio.paused){
+          audio.pause();
+          button.textContent = '▶';
+        } else {
+          audio.src = song;
+          audio.play();
+          button.textContent = '⏸';
+          currentButton = button;
+        }
+      });
+    });
+    audio.addEventListener('ended', () => { if(currentButton) currentButton.textContent = '▶'; });
   </script>
+
+  <style>
+    * { cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important; }
+  </style>
 
 </body>
 </html>
