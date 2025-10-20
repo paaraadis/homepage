@@ -190,10 +190,30 @@ a:hover {
 }
 
 .song-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
+/* === MUSIC BOX WITH SCROLL === */
+.music-box {
+  max-height: 300px; /* Adjust this number to make it taller or shorter */
+  overflow-y: auto;
+}
+
+/* Optional: Style the scrollbar to match your theme */
+.music-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.music-box::-webkit-scrollbar-track {
+  background: #ffb6e6;
+  border-radius: 0;
+}
+
+.music-box::-webkit-scrollbar-thumb {
+  background: hotpink;
+  border-radius: 0;
+}
+
+.music-box::-webkit-scrollbar-thumb:hover {
+  background: deeppink;
+}
 }
 
 /* === MOBILE === */
@@ -242,5 +262,6 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 
 
