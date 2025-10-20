@@ -17,6 +17,9 @@ body {
   padding: 8px 15px;
   font-size: 12px;
   align-items: center;
+  z-index: 10;
+  position: sticky;
+  top: 0;
 }
 
 .top-left a,
@@ -26,132 +29,70 @@ body {
   margin-left: 10px;
 }
 
-.top-left a:first-child {
-  margin-left: 0;
-}
+.top-left a:first-child { margin-left: 0; }
+.top-left .myspace-logo { font-weight: bold; margin-right: 15px; color: hotpink; }
+.top-left a:hover, .top-right a:hover { text-decoration: underline; color: deeppink; }
 
-.top-left .myspace-logo {
-  font-weight: bold;
-  margin-right: 15px;
-  color: hotpink;
-}
-
-.top-right {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.top-right span {
-  color: #000;
-}
+.top-right { display: flex; gap: 10px; align-items: center; }
+.top-right span { color: #000; }
 
 /* === LAYOUT === */
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 20px auto;
 }
 
-.sidebar {
-  width: 280px;
-  min-width: 280px;
+.sidebar { width: 280px; min-width: 280px; }
+.content { flex-grow: 1; max-width: 700px; }
+
+.profile-box, .info-box, .music-box,
+.header-box, .about-box, .friends-box, .posts-box, .comment-box {
+  background-color: #e9cee5;
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
-.profile-box,
-.info-box,
+.profile-pic { width: 100%; border: 2px solid hotpink; margin-bottom: 10px; }
+
+.info-box h3, .music-box h3,
+.about-box h3, .friends-box h3, .posts-box h3, .comment-box h3 {
+  margin-top: 0; font-size: 12px;
+}
+
+.info-box ul { list-style: none; padding: 0; margin: 0; }
+.info-box ul li { margin: 5px 0; }
+.info-box a { text-decoration: none; color: hotpink; }
+.info-box a:hover { text-decoration: underline; color: deeppink; }
+
+/* === MUSIC PLAYER === */
 .music-box {
-  background-color: #e9cee5;
+  position: sticky;
+  top: 20px;
+  background: linear-gradient(135deg, #ffb6e6 0%, #ffc6f5 50%, #ff69b4 100%);
   border: 2px solid hotpink;
-  padding: 10px;
-  margin-bottom: 15px;
+  box-shadow: 0 0 15px hotpink, 0 0 25px pink;
 }
 
-.profile-pic {
+.music-box audio {
   width: 100%;
-  border: 2px solid hotpink;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  outline: none;
 }
 
-.info-box h3,
-.music-box h3 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-.info-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.info-box ul li {
-  margin: 5px 0;
-}
-
-.info-box a {
-  text-decoration: none;
-  color: hotpink;
-}
-
-/* === SPARKLY PLAYER === */
-.sparkly-border {
-  position: relative;
-  border: 2px solid hotpink;
-  background: linear-gradient(135deg, #ffb6e6 0%, #ffc6f5 100%);
-  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
-  animation: sparkle 3s infinite ease-in-out;
-}
-
-@keyframes sparkle {
-  0% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
-  50% { box-shadow: 0 0 15px deeppink, 0 0 30px hotpink; }
-  100% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
-}
-
-/* === CONTENT === */
-.content {
-  flex-grow: 1;
-  max-width: 800px;
-}
-
-.header-box,
-.about-box,
-.friends-box,
-.posts-box,
-.comment-box {
-  background-color: #e9cee5;
-  border: 2px solid hotpink;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
-.header-box h1 {
-  font-size: 16px;
-  margin: 0;
-  font-weight: normal;
-}
-
-.about-box h3,
-.friends-box h3,
-.posts-box h3,
-.comment-box h3 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-/* === FRIENDS === */
+/* === FRIENDS / TOP 8 === */
 .friends-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 60px);
   gap: 5px;
 }
 
 .friends-grid img {
-  width: 100%;
+  width: 60px; height: 60px;
   border: 2px solid hotpink;
 }
 
@@ -159,20 +100,12 @@ body {
 .post {
   background-color: #fff;
   border: 2px solid hotpink;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 10px;
 }
 
-.post h4 {
-  margin-top: 0;
-  font-size: 13px;
-}
-
-.art-img {
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-}
+.post h4 { margin-top: 0; font-size: 13px; }
+.art-img { width: 100%; margin-top: 10px; border: 1px solid #ccc; }
 
 /* === COMMENT BOX === */
 .comment-box form {
@@ -199,38 +132,22 @@ body {
   font-weight: bold;
 }
 
-.comment-box button:hover {
-  background: #ff69b4;
-}
+.comment-box button:hover { background: #ff69b4; }
 
-.tiny-note {
-  font-size: 10px;
-  color: #555;
-  margin-top: 5px;
-}
+.tiny-note { font-size: 10px; color: #555; margin-top: 5px; }
 
 /* === MOBILE === */
 @media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .sidebar {
-    width: 100%;
-    max-width: 500px;
-  }
-  .content {
-    max-width: 100%;
-  }
+  .container { flex-direction: column; align-items: center; }
+  .sidebar { width: 100%; max-width: 500px; }
+  .content { max-width: 100%; }
 }
 
-/* === ✨ SPARKLES ✨ === */
+/* === SPARKLE BACKGROUND === */
 .sparkle-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -238,27 +155,21 @@ body {
 
 .sparkle {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   background: radial-gradient(hotpink, transparent);
   border-radius: 50%;
   animation: floatSparkles linear infinite;
 }
 
 @keyframes floatSparkles {
-  from {
-    transform: translateY(-10px);
-  }
-  to {
-    transform: translateY(100vh);
-  }
+  from { transform: translateY(-10px); }
+  to { transform: translateY(100vh); }
 }
 
-/* === 💖 CURSOR TRAIL ✨ === */
+/* === CURSOR SPARKLE TRAIL === */
 .cursor-sparkle {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: radial-gradient(circle, #ff69b4, transparent 60%);
   pointer-events: none;
@@ -267,13 +178,6 @@ body {
 }
 
 @keyframes sparkleFade {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(2);
-  }
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(2); }
 }
-<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat997.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2011/12/29/tiny-finger-point-hand-with-heart.html" target="_blank" title="Tiny Finger Point Hand With Heart"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Tiny Finger Point Hand With Heart" style="position:absolute; top: 0px; right: 0px;" /></a>
