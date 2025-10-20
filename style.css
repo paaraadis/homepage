@@ -190,7 +190,12 @@ a:hover {
 }
 
 .song-name {
-/* === MUSIC BOX WITH SCROLL === */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  
+  /* === MUSIC BOX WITH SCROLL === */
 .music-box {
   max-height: 300px; /* Adjust this number to make it taller or shorter */
   overflow-y: auto;
@@ -262,6 +267,7 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 
 
 
