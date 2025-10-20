@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorites | MySpace Portfolio ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span class="myspace-logo">myspace</span>
+      <a href="#">Home</a>
+      <a href="#">Browse</a>
+      <a href="#">Search</a>
+      <a href="#">Invite</a>
+      <a href="#">Rank</a>
+    </div>
+    <div class="top-right">
+      <span>Welcome, <strong>YourName</strong>!</span>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="profile-box">
+        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Your Name</h2>
+        <p>Artist | Illustrator</p>
+        <p><strong>Location:</strong> Your City</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Contacting Me</h3>
+        <ul>
+          <li><a href="contact.html">💌 Send Message</a></li>
+          <li><a href="favorites.html">⭐ Add to Favorites</a></li>
+          <li><a href="about.html">🎨 About Me</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <div class="header-box">
+        <h1>Favorites 💖</h1>
+      </div>
+
+      <div class="favorites-box">
+        <img src="art1.jpg" alt="Favorite 1">
+        <img src="art2.jpg" alt="Favorite 2">
+        <img src="art3.jpg" alt="Favorite 3">
+        <img src="art4.jpg" alt="Favorite 4">
+        <img src="art5.jpg" alt="Favorite 5">
+      </div>
+      <p>💗 You’ve added me to your favorites!</p>
+    </div>
+  </div>
+
+  <!-- CURSOR SPARKLE -->
+  <script>
+    document.addEventListener('mousemove', e => {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'cursor-sparkle';
+      sparkle.style.left = (e.clientX - 5) + 'px';
+      sparkle.style.top = (e.clientY - 5) + 'px';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
