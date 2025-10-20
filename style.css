@@ -1,13 +1,52 @@
 /* === GLOBAL === */
 body {
-  background-color: #dcb9d8; /* dusty purple pink */
-  font-family: "Calibri", sans-serif;
+  background-color: #dcb9d8;
+  font-family: "Verdana", sans-serif;
   color: #000;
   margin: 0;
   padding: 0;
   font-size: 12px;
 }
 
+/* === TOP NAV BAR === */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e9cee5;
+  border-bottom: 2px solid hotpink;
+  padding: 8px 15px;
+  font-size: 12px;
+  align-items: center;
+}
+
+.top-left a,
+.top-right a {
+  text-decoration: none;
+  color: hotpink;
+  margin-left: 10px;
+}
+
+.top-left a:first-child {
+  margin-left: 0;
+}
+
+.top-left .myspace-logo {
+  font-weight: bold;
+  margin-right: 15px;
+  color: hotpink;
+}
+
+.top-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-right span {
+  color: #000;
+}
+
+/* === LAYOUT === */
 .container {
   display: flex;
   justify-content: center;
@@ -17,7 +56,6 @@ body {
   margin: 20px auto;
 }
 
-/* === SIDEBAR === */
 .sidebar {
   width: 280px;
   min-width: 280px;
@@ -57,6 +95,21 @@ body {
 .info-box a {
   text-decoration: none;
   color: hotpink;
+}
+
+/* === SPARKLY PLAYER === */
+.sparkly-border {
+  position: relative;
+  border: 2px solid hotpink;
+  background: linear-gradient(135deg, #ffb6e6 0%, #ffc6f5 100%);
+  box-shadow: 0 0 10px hotpink, 0 0 20px pink;
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
+  50% { box-shadow: 0 0 15px deeppink, 0 0 30px hotpink; }
+  100% { box-shadow: 0 0 10px hotpink, 0 0 20px pink; }
 }
 
 /* === CONTENT === */
@@ -156,7 +209,7 @@ body {
   margin-top: 5px;
 }
 
-/* === MOBILE RESPONSIVE === */
+/* === MOBILE === */
 @media (max-width: 800px) {
   .container {
     flex-direction: column;
