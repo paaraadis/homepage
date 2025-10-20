@@ -1,29 +1,24 @@
-/* ========== BASE STYLES ========== */
 body {
+  background: #f6f6f6;
   font-family: Calibri, sans-serif;
-  background-color: #fafafa;
   margin: 0;
-  padding: 0;
-  color: #000;
+  color: #333;
 }
 
-a { text-decoration: none; color: #000; }
-a:hover { text-decoration: underline; }
-
-/* ========== TOP NAV ========== */
+/* Top Bar */
 .top-bar {
-  background-color: #222;
-  color: #fff;
-  padding: 8px 15px;
+  background: #003366;
+  color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 8px 15px;
+  font-size: 14px;
 }
 
 .top-bar a {
-  color: #fff;
-  margin-right: 15px;
-  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
 }
 
 .top-bar a:hover {
@@ -32,103 +27,88 @@ a:hover { text-decoration: underline; }
 
 .myspace-logo {
   font-weight: bold;
-  margin-right: 15px;
   text-transform: lowercase;
+  margin-right: 10px;
 }
 
-/* ========== LAYOUT ========== */
+/* Layout */
 .container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 20px auto;
+  gap: 20px;
 }
 
-/* ========== SIDEBAR ========== */
 .sidebar {
-  width: 25%;
-  padding: 10px;
+  width: 250px;
 }
 
-.profile-box {
-  text-align: center;
+.content {
+  flex: 1;
+}
+
+/* Boxes */
+.profile-box, .info-box, .music-box, .about-box, .friends-box, .posts-box, .comment-box {
+  background: white;
+  padding: 10px;
   margin-bottom: 15px;
+  border: 2px solid pink;
 }
 
 .profile-pic {
   width: 100%;
-  border: 1px solid #ccc;
   display: block;
+  margin-bottom: 8px;
 }
 
-.info-box {
-  background: #f2f2f2;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
+/* Navigation */
 .info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box ul li {
+  margin-bottom: 5px;
+}
+
+.info-box ul li a {
+  color: #003366;
+  text-decoration: none;
+}
+
+.info-box ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Playlist */
+.playlist {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.info-box li {
-  margin-bottom: 8px;
-}
-
-.info-box a {
-  display: block;
-  padding: 6px;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.info-box a:hover {
-  background: #e0e0e0;
-}
-
-/* ========== MUSIC PLAYER ========== */
-.music-box {
-  background: pink;
-  border: 2px solid #ff69b4;
-  padding: 10px;
-}
-
-.playlist {
-  list-style: none;
-  padding: 0;
-}
-
 .playlist li {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  margin: 5px 0;
 }
 
 .play-btn {
-  background: #ff69b4;
+  background: pink;
+  border: 1px solid #cc6699;
   color: white;
-  border: none;
-  padding: 2px 8px;
+  font-size: 14px;
   margin-right: 8px;
   cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
 .play-btn:hover {
-  background: #ff1493;
+  background: hotpink;
 }
 
-/* ========== MAIN CONTENT ========== */
-.content {
-  width: 75%;
-  padding: 15px;
-  background: #fff;
-  border: 1px solid #ccc;
-}
-
-.header-box h1 { margin-top: 0; }
-
+/* Friends Grid */
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -137,74 +117,59 @@ a:hover { text-decoration: underline; }
 
 .friends-grid img {
   width: 100%;
-  display: block;
-  border: 1px solid #ccc;
+  border: 1px solid pink;
 }
 
-.post {
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-
-.art-img {
-  max-width: 100%;
-  border: 1px solid #ccc;
-  margin: 8px 0;
-}
-
-/* ========== COMMENT BOX ========== */
-.comment-box {
-  margin-top: 20px;
-  padding: 10px;
-  background: #f7f7f7;
-  border: 1px solid #ccc;
-}
-
+/* Comment Box */
 .comment-box input,
-.comment-box textarea {
+.comment-box textarea,
+.comment-box button {
+  display: block;
   width: 100%;
-  margin-bottom: 8px;
+  margin: 5px 0;
   padding: 6px;
   border: 1px solid #ccc;
-  font-family: Calibri, sans-serif;
 }
 
 .comment-box button {
-  background: #ff69b4;
-  color: white;
+  background: pink;
   border: none;
-  padding: 8px 12px;
+  color: white;
   cursor: pointer;
 }
 
 .comment-box button:hover {
-  background: #ff1493;
+  background: hotpink;
 }
 
-.tiny-note {
-  font-size: 12px;
-  color: #555;
-}
-
-/* ========== SPARKLY BORDER EFFECT ========== */
+/* Sparkly Border */
 .sparkly-border {
   position: relative;
-  overflow: hidden;
+  border: 2px solid pink;
 }
 
-.sparkly-border::before {
-  content: "";
+.sparkly-border::after {
+  content: '';
   position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  background: linear-gradient(90deg, pink, hotpink, pink);
-  background-size: 300% 300%;
-  z-index: -1;
-  animation: sparkle 3s linear infinite;
+  inset: 0;
+  border: 2px dashed hotpink;
+  pointer-events: none;
+  animation: sparkle 2s linear infinite;
 }
 
 @keyframes sparkle {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  to { transform: rotate(360deg); }
+}
+
+/* Cursor Sparkle */
+.cursor-sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  background: radial-gradient(circle, white 40%, transparent 60%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
