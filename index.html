@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My MySpace Portfolio ✨</title>
+  <title>Your Myspace Portfolio ✨</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- 🌟 TOP NAV BAR -->
   <div class="top-bar">
     <div class="top-left">
       <span class="myspace-logo">myspace</span>
@@ -24,7 +24,8 @@
   </div>
 
   <div class="container">
-    <!-- Sidebar -->
+
+    <!-- LEFT SIDEBAR -->
     <div class="sidebar">
       <div class="profile-box">
         <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
@@ -48,22 +49,22 @@
         <p>Art, Design, Music, Retro Web ✨</p>
       </div>
 
-      <!-- Music Player -->
+      <!-- 🌸 SPARKLY MUSIC PLAYER -->
       <div class="music-box">
-        <h3>My Playlist</h3>
+        <h3>My Playlist 🎧</h3>
         <ul class="playlist">
-          <li><button class="play-btn" data-song="music/Charli XCX – Next Level Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
-          <li><button class="play-btn" data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
-          <li><button class="play-btn" data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
-          <li><button class="play-btn" data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
-          <li><button class="play-btn" data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li>
-          <li><button class="play-btn" data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
+          <li class="track"><button data-song="music/Charli XCX – Next Level Charli.m4a">▶</button> Charli XCX – Next Level Charli</li>
+          <li class="track"><button data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button> Halsey – Only Living Girl in LA</li>
+          <li class="track"><button data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button> Julia Wolf – In My Room (Badger Remix)</li>
+          <li class="track"><button data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button> Kim Petras – I Like Ur Look</li>
+          <li class="track"><button data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button> PinkPantheress & Rachel Chinouriri – Romeo</li>
+          <li class="track"><button data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button> Hayley Williams – Ego Death At A Bachelorette Party</li>
         </ul>
         <audio id="audio-player" controls style="display:none;"></audio>
       </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- RIGHT CONTENT -->
     <div class="content">
       <div class="header-box">
         <h1>Your Name is in your extended network 💖</h1>
@@ -77,14 +78,14 @@
       <div class="friends-box">
         <h3>Top 8 Favorites</h3>
         <div class="friends-grid">
-          <img src="art1.jpg" alt="1">
-          <img src="art2.jpg" alt="2">
-          <img src="art3.jpg" alt="3">
-          <img src="art4.jpg" alt="4">
-          <img src="art5.jpg" alt="5">
-          <img src="art6.jpg" alt="6">
-          <img src="art7.jpg" alt="7">
-          <img src="art8.jpg" alt="8">
+          <img src="art1.jpg" alt="Friend 1">
+          <img src="art2.jpg" alt="Friend 2">
+          <img src="art3.jpg" alt="Friend 3">
+          <img src="art4.jpg" alt="Friend 4">
+          <img src="art5.jpg" alt="Friend 5">
+          <img src="art6.jpg" alt="Friend 6">
+          <img src="art7.jpg" alt="Friend 7">
+          <img src="art8.jpg" alt="Friend 8">
         </div>
       </div>
 
@@ -102,6 +103,7 @@
         </div>
       </div>
 
+      <!-- 💌 COMMENT BOX -->
       <div id="contact" class="comment-box">
         <h3>Leave a Comment or Message 💬</h3>
         <form action="https://formspree.io/f/mnngyaga" method="POST">
@@ -115,41 +117,38 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script>
-    // Sparkly Cursor
-    const cursorSparkle = document.createElement('div');
-    cursorSparkle.className = 'cursor-sparkle';
-    document.body.appendChild(cursorSparkle);
+    // Cursor Sparkle
     document.addEventListener('mousemove', e => {
-      cursorSparkle.style.left = e.pageX + 'px';
-      cursorSparkle.style.top = e.pageY + 'px';
+      const sparkle = document.createElement('div');
+      sparkle.className = 'cursor-sparkle';
+      sparkle.style.left = e.pageX + 'px';
+      sparkle.style.top = e.pageY + 'px';
+      document.body.appendChild(sparkle);
+      setTimeout(()=> sparkle.remove(), 800);
     });
 
     // Music Player Logic
     const audio = document.getElementById('audio-player');
-    const buttons = document.querySelectorAll('.play-btn');
-    let currentButton = null;
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const song = button.dataset.song;
-        if(currentButton && currentButton !== button) currentButton.textContent = '▶';
+    const buttons = document.querySelectorAll('.track button');
+    let currentBtn = null;
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const song = btn.dataset.song;
+        if(currentBtn && currentBtn !== btn) currentBtn.textContent = '▶';
         if(audio.src.includes(song) && !audio.paused){
           audio.pause();
-          button.textContent = '▶';
+          btn.textContent = '▶';
         } else {
           audio.src = song;
           audio.play();
-          button.textContent = '⏸';
-          currentButton = button;
+          btn.textContent = '⏸';
+          currentBtn = btn;
         }
       });
     });
-    audio.addEventListener('ended', () => { if(currentButton) currentButton.textContent = '▶'; });
+    audio.addEventListener('ended', () => { if(currentBtn) currentBtn.textContent = '▶'; });
   </script>
 
-  <style>
-    * { cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important; }
-  </style>
 </body>
 </html>
