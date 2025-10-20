@@ -1,112 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>✨ Myspace Portfolio ✨</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>paradis saathoff ~ art portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <marquee behavior="scroll" direction="left" scrollamount="6">
-    💖 Welcome to my Myspace Art Portfolio 💖
-  </marquee>
+  <div class="container">
 
-  <div id="container">
-    <!-- LEFT COLUMN - SIDEBAR -->
-    <aside id="sidebar">
-      <div class="profile-box">
-        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
-        <h2>Your Name</h2>
-        <p class="location">📍 Your City, USA</p>
-        <p class="login">Last Login: 10/20/2025</p>
-        <a href="#" class="profile-link">View My: Pics | Blog | Videos</a>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
+      <h2>paradis!</h2>
+      <p>digital art ~ acrylic paint ~ charcoal</p>
+      <p><strong>location:</strong> new hampshire</p>
+
+      <div class="links">
+        <a href="#">💌 contact</a><br>
+        <a href="#">🎨 portfolio</a><br>
+        <a href="#">📝 about</a>
       </div>
 
-      <div class="contact-box">
-        <button>Add to Friends</button>
-        <button>Send Message</button>
-        <button>IM</button>
+     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5pQfp2o18sdhaByWRN9IVe?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="content">
+      <h1>Welcome to My Page ✨</h1>
+
+      <div class="post">
+        <h3>Artwork Title #1</h3>
+        <img src="art1.jpg" alt="Artwork 1" class="art-img">
+        <p>Short description of the piece or project.</p>
       </div>
 
-      <div class="info-box">
-        <h3>About Me</h3>
-        <p>I love creating art with a nostalgic twist. 💫</p>
+      <div class="post">
+        <h3>Artwork Title #2</h3>
+        <img src="art2.jpg" alt="Artwork 2" class="art-img">
+        <p>Another description goes here.</p>
       </div>
-
-      <div class="interests-box">
-        <h3>Interests</h3>
-        <ul>
-          <li>Art 🎨</li>
-          <li>Glitter ✨</li>
-          <li>Y2K aesthetics 💅</li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- RIGHT COLUMN - MAIN FEED -->
-    <main id="main-content">
-
-      <!-- Intro / Bio Section -->
-      <section class="intro-section">
-        <h2>Welcome to my Myspace!</h2>
-        <p>This is my digital art portfolio, styled just like old-school Myspace. Scroll down to see my posts 🎨</p>
-      </section>
-
-      <!-- Posts / Art Feed -->
-      <section id="posts">
-        <h2>🎨 My Artwork Feed</h2>
-
-        <!-- Post 1 -->
-        <div class="post">
-          <div class="post-header">
-            <img src="your-photo.jpg" alt="Profile" class="mini-pic">
-            <div>
-              <strong>Your Name</strong>
-              <span class="timestamp">· Posted on Oct 20, 2025</span>
-            </div>
-          </div>
-          <div class="post-body">
-            <img src="art1.jpg" alt="Artwork 1" class="post-image">
-            <p class="caption">“The world through rose-tinted glasses.” 🌸</p>
-          </div>
-          <div class="post-footer">
-            <span>💬 12 Comments</span> · <span>❤️ 87 Likes</span>
-          </div>
-        </div>
-
-        <!-- Post 2 -->
-        <div class="post">
-          <div class="post-header">
-            <img src="your-photo.jpg" alt="Profile" class="mini-pic">
-            <div>
-              <strong>Your Name</strong>
-              <span class="timestamp">· Posted on Oct 17, 2025</span>
-            </div>
-          </div>
-          <div class="post-body">
-            <img src="art2.jpg" alt="Artwork 2" class="post-image">
-            <p class="caption">“A study in neon and chaos.” 🕺</p>
-          </div>
-          <div class="post-footer">
-            <span>💬 8 Comments</span> · <span>❤️ 54 Likes</span>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Music Player -->
-      <section id="music-player">
-        <h2>🎧 Now Playing</h2>
-        <audio controls autoplay loop>
-          <source src="your-song.mp3" type="audio/mpeg">
-        </audio>
-      </section>
-    </main>
+    </div>
   </div>
-
-  <footer>
-    <p>✨ Made with love & glitter ✨</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
