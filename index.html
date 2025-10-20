@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Your Myspace Portfolio ✨</title>
   <link rel="stylesheet" href="style.css">
+  <script src="music-player.js" defer></script>
+  <script src="cursor-sparkle.js" defer></script>
 </head>
 <body>
 
@@ -27,35 +29,54 @@
 
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
+
       <div class="profile-box">
-        <img src="images/your-photo.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
         <h2>Your Name</h2>
         <p>Artist | Illustrator</p>
         <p><strong>Location:</strong> Your City</p>
       </div>
 
       <div class="info-box">
-        <h3>Links</h3>
+        <h3>Contacting Me</h3>
         <ul>
-          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="contact.html">💌 Send Message</a></li>
+          <li><a href="#">⭐ Add to Favorites</a></li>
           <li><a href="about.html">🎨 About Me</a></li>
-          <li><a href="favorites.html">⭐ Favorites</a></li>
-          <li><a href="contact.html">💌 Contact</a></li>
+          <li><a href="index.html">🏠 Home</a></li>
         </ul>
       </div>
 
       <!-- 🌸 SPARKLY MUSIC PLAYER -->
       <div class="music-box">
         <h3>My Playlist 🎧</h3>
-        <ul class="track-list">
-          <li data-src="music/Charli XCX – Next Level Charli.m4a">Charli XCX – Next Level Charli <button class="play-btn">Play</button></li>
-          <li data-src="music/Halsey – Only Living Girl in LA.mp3">Halsey – Only Living Girl in LA <button class="play-btn">Play</button></li>
-          <li data-src="music/Julia Wolf – In My Room (Badger Remix).m4a">Julia Wolf – In My Room (Badger Remix) <button class="play-btn">Play</button></li>
-          <li data-src="music/Kim Petras – I Like Ur Look.m4a">Kim Petras – I Like Ur Look <button class="play-btn">Play</button></li>
-          <li data-src="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri <button class="play-btn">Play</button></li>
-          <li data-src="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">Hayley Williams – Ego Death At A Bachelorette Party <button class="play-btn">Play</button></li>
-        </ul>
-        <audio id="audio" src=""></audio>
+        <div id="playlist">
+          <div class="track">
+            <span class="song-name">Charli XCX – Next Level Charli</span>
+            <button class="play-btn" data-src="music/Charli XCX – Next Level Charli.m4a">▶️</button>
+          </div>
+          <div class="track">
+            <span class="song-name">Halsey – Only Living Girl in LA</span>
+            <button class="play-btn" data-src="music/Halsey – Only Living Girl in LA.mp3">▶️</button>
+          </div>
+          <div class="track">
+            <span class="song-name">Julia Wolf – In My Room (Badger Remix)</span>
+            <button class="play-btn" data-src="music/Julia Wolf – In My Room (Badger Remix).m4a">▶️</button>
+          </div>
+          <div class="track">
+            <span class="song-name">Kim Petras – I Like Ur Look</span>
+            <button class="play-btn" data-src="music/Kim Petras – I Like Ur Look.m4a">▶️</button>
+          </div>
+          <div class="track">
+            <span class="song-name">PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri</span>
+            <button class="play-btn" data-src="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶️</button>
+          </div>
+          <div class="track">
+            <span class="song-name">Hayley Williams – Ego Death At A Bachelorette Party</span>
+            <button class="play-btn" data-src="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶️</button>
+          </div>
+        </div>
+        <audio id="audio-player"></audio>
       </div>
 
     </div>
@@ -75,19 +96,36 @@
       <div class="friends-box">
         <h3>Top 8 Favorites</h3>
         <div class="friends-grid">
-          <img src="images/art1.jpg" alt="Friend 1">
-          <img src="images/art2.jpg" alt="Friend 2">
-          <img src="images/art3.jpg" alt="Friend 3">
-          <img src="images/art4.jpg" alt="Friend 4">
-          <img src="images/art5.jpg" alt="Friend 5">
-          <img src="images/art6.jpg" alt="Friend 6">
-          <img src="images/art7.jpg" alt="Friend 7">
-          <img src="images/art8.jpg" alt="Friend 8">
+          <img src="art1.jpg" alt="Friend 1">
+          <img src="art2.jpg" alt="Friend 2">
+          <img src="art3.jpg" alt="Friend 3">
+          <img src="art4.jpg" alt="Friend 4">
+          <img src="art5.jpg" alt="Friend 5">
+          <img src="art6.jpg" alt="Friend 6">
+          <img src="art7.jpg" alt="Friend 7">
+          <img src="art8.jpg" alt="Friend 8">
         </div>
       </div>
 
-      <!-- 💌 COMMENT BOX -->
-      <div id="contact" class="comment-box">
+      <div class="posts-box">
+        <h3>Latest Posts ✨</h3>
+
+        <div class="post">
+          <h4>“Soft Light”</h4>
+          <img src="art1.jpg" alt="Artwork 1" class="art-img">
+          <p>My latest illustration exploring surreal dreamscapes.</p>
+          <div class="post-footer">❤️ 12 Likes 💬 3 Comments</div>
+        </div>
+
+        <div class="post">
+          <h4>“The Garden”</h4>
+          <img src="art2.jpg" alt="Artwork 2" class="art-img">
+          <p>Digital painting inspired by retro floral patterns.</p>
+          <div class="post-footer">❤️ 9 Likes 💬 2 Comments</div>
+        </div>
+      </div>
+
+      <div class="comment-box">
         <h3>Leave a Comment or Message 💬</h3>
         <form action="https://formspree.io/f/mnngyaga" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
@@ -98,34 +136,7 @@
         <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
       </div>
 
-      <!-- 🖼 POSTS SECTION -->
-      <div class="posts-box">
-        <h3>Latest Posts 💌</h3>
-
-        <div class="post">
-          <h4>“Soft Light”</h4>
-          <img src="images/art1.jpg" alt="Artwork 1" class="art-img">
-          <p>Exploring surreal dreamscapes with soft lighting.</p>
-          <div class="post-footer">
-            <span>💖 12 Likes</span> | <span>💬 3 Comments</span>
-          </div>
-        </div>
-
-        <div class="post">
-          <h4>“The Garden”</h4>
-          <img src="images/art2.jpg" alt="Artwork 2" class="art-img">
-          <p>Inspired by retro floral patterns.</p>
-          <div class="post-footer">
-            <span>💖 20 Likes</span> | <span>💬 5 Comments</span>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </div>
-
-<script src="music-player.js"></script>
-<script src="cursor-sparkle.js"></script>
 </body>
 </html>
