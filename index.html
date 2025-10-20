@@ -1,183 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My MySpace Portfolio ✨</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* === GLOBAL === */
+body {
+  background-color: #dcb9d8;
+  font-family: Calibri, sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
 
-  <!-- 🌸 Top Navigation Bar -->
-  <div class="top-bar">
-    <div class="top-left">
-      <span class="myspace-logo">myspace</span>
-      <a href="#">Home</a>
-      <a href="#">Browse</a>
-      <a href="#">Search</a>
-      <a href="#">Invite</a>
-      <a href="#">Rank</a>
-    </div>
-    <div class="top-right">
-      <span>Welcome, <strong>YourName</strong>!</span>
-      <a href="#">Logout</a>
-    </div>
-  </div>
+/* === TOP NAV BAR === */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e9cee5;
+  border-bottom: 2px solid hotpink;
+  padding: 8px 15px;
+  font-size: 12px;
+  align-items: center;
+}
 
-  <div class="container">
-    <!-- 🌟 Sidebar -->
-    <div class="sidebar">
-      <div class="profile-box">
-        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
-        <h2>Your Name</h2>
-        <p>Artist | Illustrator</p>
-        <p><strong>Location:</strong> Your City</p>
-      </div>
+.top-left a,
+.top-right a {
+  text-decoration: none;
+  color: hotpink;
+  margin-left: 10px;
+}
 
-      <div class="info-box">
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="index.html">🏠 Home</a></li>
-          <li><a href="about.html">🎀 About Me</a></li>
-          <li><a href="favorites.html">⭐ Favorites</a></li>
-          <li><a href="contact.html">💌 Contact</a></li>
-        </ul>
-      </div>
+.top-left a:first-child {
+  margin-left: 0;
+}
 
-      <div class="info-box">
-        <h3>Interests</h3>
-        <p>Art, Design, Music, Retro Web ✨</p>
-      </div>
+.top-left .myspace-logo {
+  font-weight: bold;
+  margin-right: 15px;
+  color: hotpink;
+}
 
-      <!-- 🎧 Classic MySpace Player -->
-      <div class="music-box">
-        <h3>My Playlist</h3>
-        <ul class="playlist">
-          <li>
-            <button class="play-btn" data-song="music/Charli XCX – Next Level Charli.m4a">▶</button>
-            Charli XCX – Next Level Charli
-          </li>
-          <li>
-            <button class="play-btn" data-song="music/Halsey – Only Living Girl in LA.mp3">▶</button>
-            Halsey – Only Living Girl in LA
-          </li>
-          <li>
-            <button class="play-btn" data-song="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button>
-            Julia Wolf – In My Room (Badger Remix)
-          </li>
-          <li>
-            <button class="play-btn" data-song="music/Kim Petras – I Like Ur Look.m4a">▶</button>
-            Kim Petras – I Like Ur Look
-          </li>
-          <li>
-            <button class="play-btn" data-song="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button>
-            PinkPantheress & Rachel Chinouriri – Romeo
-          </li>
-          <li>
-            <button class="play-btn" data-song="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button>
-            Hayley Williams – Ego Death At A Bachelorette Party
-          </li>
-        </ul>
-        <audio id="audio-player" controls style="display: none;"></audio>
-      </div>
-    </div>
+.top-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-    <!-- 🩷 Main Content -->
-    <div class="content">
-      <div class="header-box">
-        <h1>Your Name is in your extended network 💖</h1>
-      </div>
+.top-right span {
+  color: #000;
+}
 
-      <div class="about-box">
-        <h3>About Me</h3>
-        <p>Welcome to my art portfolio — I love creating nostalgic, surreal, and dreamy pieces.</p>
-      </div>
+/* === LAYOUT === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
 
-      <div class="friends-box">
-        <h3>Top 8 Favorites</h3>
-        <div class="friends-grid">
-          <img src="art1.jpg" alt="1">
-          <img src="art2.jpg" alt="2">
-          <img src="art3.jpg" alt="3">
-          <img src="art4.jpg" alt="4">
-          <img src="art5.jpg" alt="5">
-          <img src="art6.jpg" alt="6">
-          <img src="art7.jpg" alt="7">
-          <img src="art8.jpg" alt="8">
-        </div>
-      </div>
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+}
 
-      <div class="posts-box">
-        <h3>Latest Posts ✨</h3>
-        <div class="post">
-          <h4>“Soft Light”</h4>
-          <img src="art1.jpg" alt="Artwork 1" class="art-img">
-          <p>My latest illustration exploring surreal dreamscapes.</p>
-        </div>
+.profile-box,
+.info-box,
+.music-box {
+  background-color: #e9cee5;
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 15px;
+}
 
-        <div class="post">
-          <h4>“The Garden”</h4>
-          <img src="art2.jpg" alt="Artwork 2" class="art-img">
-          <p>Digital painting inspired by retro floral patterns.</p>
-        </div>
-      </div>
+.profile-pic {
+  width: 100%;
+  border: 2px solid hotpink;
+  margin-bottom: 10px;
+}
 
-      <div id="contact" class="comment-box">
-        <h3>Leave a Comment or Message 💬</h3>
-        <form action="https://formspree.io/f/mnngyaga" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
-      </div>
-    </div>
-  </div>
+.info-box h3,
+.music-box h3 {
+  margin-top: 0;
+  font-size: 12px;
+}
 
-  <script>
-    // ✨ Sparkly Cursor
-    const cursorSparkle = document.createElement('div');
-    cursorSparkle.className = 'cursor-sparkle';
-    document.body.appendChild(cursorSparkle);
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    document.addEventListener('mousemove', (e) => {
-      cursorSparkle.style.left = e.pageX + 'px';
-      cursorSparkle.style.top = e.pageY + 'px';
-    });
+.info-box ul li {
+  margin: 5px 0;
+}
 
-    // 🎧 MySpace Player Logic
-    const audio = document.getElementById('audio-player');
-    const buttons = document.querySelectorAll('.play-btn');
-    let currentButton = null;
+.info-box a {
+  text-decoration: none;
+  color: hotpink;
+}
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const song = button.getAttribute('data-song');
-        if (currentButton && currentButton !== button) {
-          currentButton.textContent = '▶';
-        }
-        if (audio.src.includes(song) && !audio.paused) {
-          audio.pause();
-          button.textContent = '▶';
-        } else {
-          audio.src = song;
-          audio.play();
-          button.textContent = '⏸';
-          currentButton = button;
-        }
-      });
-    });
+/* === MUSIC PLAYER === */
+.music-box ul.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    audio.addEventListener('ended', () => {
-      if (currentButton) currentButton.textContent = '▶';
-    });
-  </script>
+.music-box ul.playlist li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
 
-  <!-- 🐰 Custom Cursor -->
-  <style>
-    * {
-      cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
-    }
-  </style>
-</body>
-</html>
+.music-box .play-btn {
+  background-color: hotpink;
+  border: none;
+  color: white;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.music-box .play-btn:hover {
+  background-color: deeppink;
+}
+
+/* === CONTENT === */
+.content {
+  flex-grow: 1;
+  max-width: 800px;
+}
+
+.header-box,
+.about-box,
+.friends-box,
+.posts-box,
+.comment-box {
+  background-color: #e9cee5;
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.header-box h1 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.about-box h3,
+.friends-box h3,
+.posts-box h3,
+.comment-box h3 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+/* === FRIENDS === */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.friends-grid img {
+  width: 100%;
+  border: 2px solid hotpink;
+}
+
+/* === POSTS === */
+.post {
+  background-color: #fff;
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.post h4 {
+  margin-top: 0;
+  font-size: 13px;
+}
+
+.art-img {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+/* === COMMENT BOX === */
+.comment-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-box input,
+.comment-box textarea {
+  padding: 6px;
+  border: 1px solid hotpink;
+  background: #fff;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.comment-box button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-box button:hover {
+  background: #ff69b4;
+}
+
+.tiny-note {
+  font-size: 10px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* === MOBILE === */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: 500px;
+  }
+  .content {
+    max-width: 100%;
+  }
+}
+
+/* === CURSOR SPARKLE === */
+.cursor-sparkle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff69b4, transparent 60%);
+  pointer-events: none;
+  animation: sparkleFade 1s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Custom Cursor */
+* {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+}
