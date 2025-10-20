@@ -1,42 +1,9 @@
+/* General page style */
 body {
-  background: url('sparkly-background.gif') repeat fixed;
+  background: #f9d2f0;
   font-family: "Comic Sans MS", cursive;
-  color: #fff;
-  text-align: center;
-}
-
-#profile-wrapper {
-  width: 800px;
-  margin: 40px auto;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid hotpink;
-  padding: 20px;
-  box-shadow: 0 0 20px hotpink;
-}
-
-header h1 {
-  font-size: 2.5em;
-  text-shadow: 2px 2px magenta;
-}
-
-.profile-pic {
-  width: 150px;
-  border: 3px solid hotpink;
-  border-radius: 10px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-a {
-  color: cyan;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  color: #000;
+  margin: 0;
 }
 
 marquee {
@@ -44,4 +11,142 @@ marquee {
   color: white;
   padding: 5px;
   font-weight: bold;
+}
+
+/* Container layout */
+#container {
+  display: flex;
+  width: 1000px;
+  max-width: 95%;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+/* Left sidebar */
+#sidebar {
+  width: 280px;
+  background: #f7b8e0;
+  border: 2px solid hotpink;
+  padding: 10px;
+  box-shadow: 0 0 10px hotpink;
+}
+
+.profile-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  border: 3px solid hotpink;
+  border-radius: 5px;
+}
+
+.profile-link {
+  display: block;
+  margin-top: 5px;
+  color: blue;
+  font-size: 0.9em;
+}
+
+.contact-box button {
+  width: 100%;
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 6px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.contact-box button:hover {
+  background: deeppink;
+}
+
+.info-box, .interests-box {
+  margin-top: 15px;
+}
+
+.info-box h3, .interests-box h3 {
+  font-size: 1.1em;
+  border-bottom: 1px solid hotpink;
+  margin-bottom: 5px;
+}
+
+.interests-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.interests-box li {
+  margin-bottom: 5px;
+}
+
+/* Right column */
+#main-content {
+  flex: 1;
+  background: #fbe5f3;
+  border: 2px solid hotpink;
+  padding: 15px;
+  box-shadow: 0 0 10px hotpink;
+}
+
+/* Intro section */
+.intro-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Posts */
+.post {
+  background: white;
+  border: 1px solid hotpink;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mini-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid hotpink;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.8em;
+  color: gray;
+}
+
+.post-image {
+  width: 100%;
+  border: 2px solid hotpink;
+  margin-bottom: 10px;
+}
+
+.caption {
+  font-size: 1em;
+  color: black;
+}
+
+.post-footer {
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: hotpink;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
 }
