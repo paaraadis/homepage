@@ -7,7 +7,18 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Top Navigation -->
+
+  <!-- ✨ Custom Cursor -->
+  <style>
+    * {
+      cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat985.cur), auto !important;
+    }
+  </style>
+  <a href="https://www.cursors-4u.com/cursor/2011/12/29/tiny-bunny.html" target="_blank" title="Tiny Bunny">
+    <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Tiny Bunny" style="position:absolute; top:0; right:0;" />
+  </a>
+
+  <!-- 🧭 Top Navigation -->
   <div class="top-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -18,6 +29,7 @@
     </ul>
   </div>
 
+  <!-- 💻 Two-Column Layout -->
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -34,7 +46,39 @@
     <div class="main-content">
       <h1>Welcome to My Page ✨</h1>
       <p>Hello! This is my personal Myspace-style site. Explore the links on the left to learn more about me.</p>
-      <p>You can add your photos, music, bio, and contact form on separate pages. Have fun customizing!</p>
+      <p>Check out my favorite tracks below 🎧</p>
+
+      <!-- 🎧 Music Player -->
+      <div class="music-player">
+        <h2>My Playlist</h2>
+        <ul>
+          <li>
+            <button class="play-btn" data-file="music/Charli XCX – Next Level Charli.m4a">▶</button>
+            Charli XCX – Next Level Charli
+          </li>
+          <li>
+            <button class="play-btn" data-file="music/Halsey – Only Living Girl in LA.mp3">▶</button>
+            Halsey – Only Living Girl in LA
+          </li>
+          <li>
+            <button class="play-btn" data-file="music/Julia Wolf – In My Room (Badger Remix).m4a">▶</button>
+            Julia Wolf – In My Room (Badger Remix)
+          </li>
+          <li>
+            <button class="play-btn" data-file="music/Kim Petras – I Like Ur Look.m4a">▶</button>
+            Kim Petras – I Like Ur Look
+          </li>
+          <li>
+            <button class="play-btn" data-file="music/PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri.mp3">▶</button>
+            PinkPantheress & Rachel Chinouriri – Romeo + Rachel Chinouriri
+          </li>
+          <li>
+            <button class="play-btn" data-file="music/Hayley Williams – Ego Death At A Bachelorette Party.mp3">▶</button>
+            Hayley Williams – Ego Death At A Bachelorette Party
+          </li>
+        </ul>
+        <audio id="audio-player" controls style="display:none;"></audio>
+      </div>
 
       <!-- Example image -->
       <div class="example-image">
@@ -47,5 +91,39 @@
   <footer>
     <p>© 2025 My Myspace Page — made with 💖</p>
   </footer>
+
+  <!-- 🎧 Music Player Script -->
+  <script>
+    const buttons = document.querySelectorAll('.play-btn');
+    const player = document.getElementById('audio-player');
+    let currentButton = null;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const file = button.getAttribute('data-file');
+
+        if (currentButton && currentButton !== button) {
+          currentButton.textContent = '▶';
+        }
+
+        if (player.src.includes(file) && !player.paused) {
+          player.pause();
+          button.textContent = '▶';
+        } else {
+          player.src = file;
+          player.play();
+          button.textContent = '⏸';
+          currentButton = button;
+        }
+      });
+    });
+
+    player.addEventListener('ended', () => {
+      if (currentButton) {
+        currentButton.textContent = '▶';
+      }
+    });
+  </script>
+
 </body>
 </html>
