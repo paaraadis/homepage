@@ -92,10 +92,18 @@ a:hover {
   align-self: flex-start;
 }
 
+/* Spotify player styling - no box */
+.spotify-player {
+  display: block;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+}
+
 /* === BOXES === */
 .profile-box,
 .info-box,
-.music-box,
 .header-box,
 .about-box,
 .friends-box,
@@ -196,83 +204,6 @@ a:hover {
 
 .comment-box button:hover {
   background: #ff69b4;
-}
-/* === MUSIC PLAYER === */
-.track-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 100px;
-  overflow-y: auto;
-}
-
-.track {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
-  gap: 5px;
-}
-
-.track button {
-  background: hotpink;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  border-radius: 0;
-}
-
-.track button:hover {
-  background: deeppink;
-}
-
-.song-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
-}
-
-/* === MUSIC BOX WITH SCROLL === */
-.music-box {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.music-box::-webkit-scrollbar {
-  width: 8px;
-}
-
-.music-box::-webkit-scrollbar-track {
-  background: #ffb6e6;
-  border-radius: 0;
-}
-
-.music-box::-webkit-scrollbar-thumb {
-  background: hotpink;
-  border-radius: 0;
-}
-
-.music-box::-webkit-scrollbar-thumb:hover {
-  background: deeppink;
-}
-
-
-/* === MOBILE === */
-@media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .sidebar {
-    width: 100%;
-    max-width: 500px;
-  }
-  .content {
-    max-width: 100%;
-  }
 }
 
 /* === MOBILE === */
@@ -415,10 +346,3 @@ a:hover,
 marquee {
   margin: 0;
 }
-
-
-
-
-
-
-
