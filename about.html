@@ -1,111 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>About - Paradis S.</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="about-style.css">
-  <script src="cursor-sparkle.js" defer></script>
-</head>
-<body>
+/* === ABOUT PAGE SPECIFIC STYLES === */
 
-  <!-- 🌟 TOP NAV BAR -->
-  <div class="top-bar">
-    <div class="top-left">
-      <span class="myspace-logo">pearspace</span>
-      <a href="index.html">Home</a>      
-      <a href="#">Browse</a>
-      <a href="#">Search</a>
-      <a href="#">Invite</a>
-      <a href="#">Rank</a>
-    </div>
-    <div class="top-right">
-      <span>Welcome, <strong>paradis</strong>!</span>
-      <a href="#">Logout</a>
-    </div>
-  </div>
+/* Header GIF Box */
+.header-box-gif {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
 
-  <!-- MARQUEE SCROLLING TEXT -->
-  <div class="marquee-container">
-    <marquee behavior="scroll" direction="left">
-      ˚₊𓆩༺🕷༻𓆪₊˚ Learn more about me and my work! ˚₊𓆩༺🕷༻𓆪₊˚
-    </marquee>
-  </div>
+.header-box-gif img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
-  <div class="container">
+/* Profile Photo Box */
+.profile-photo-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
 
-    <!-- LEFT SIDEBAR -->
-    <div class="sidebar sidebar-left">
-      <div class="profile-box">
-        <h2>paradis</h2>
-        <p>⠀⠀⠀⢠⡾⠲⠶⣤⣀⣠⣤⣤⣤⡿⠛⠿⡴⠾⠛⢻⡆⠀⠀⠀
-⠀⠀⠀⣼⠁⠀⠀⠀⠉⠁⠀⢀⣿⠐⡿⣿⠿⣶⣤⣤⣷⡀⠀⠀
-⠀⠀⠀⢹⡶⠀⠀⠀⠀⠀⠀⠈⢯⣡⣿⣿⣀⣸⣿⣦⢓⡟⠀⠀
-⠀⠀⢀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠹⣍⣭⣾⠁⠀⠀
-⠀⣀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣸⣷⣤⡀
-⠈⠉⠹⣏⡁⠀⢸⣿⠀⠀⠀⢀⡀⠀⠀⠀⣿⠆⠀⢀⣸⣇⣀⠀
-⠀⠐⠋⢻⣅⣄⢀⣀⣀⡀⠀⠯⠽⠂⢀⣀⣀⡀⠀⣤⣿⠀⠉⠀
-⠀⠀⠴⠛⠙⣳⠋⠉⠉⠙⣆⠀⠀⢰⡟⠉⠈⠙⢷⠟⠉⠙⠂⠀
-⠀⠀⠀⠀⠀⢻⣄⣠⣤⣴⠟⠛⠛⠛⢧⣤⣤⣀⡾</p>
-        <p><strong>Location:</strong> coding prison</p>
-        
-        <div class="online-status">
-          <span class="status-dot"></span>
-          <span>Online Now!</span>
-        </div>
-        
-        <div class="mood-status">
-          <strong>Mood:</strong> creative ✨
-        </div>
-        
-        <div class="profile-stats">
-          <p>Profile Views: 1,337</p>
-        </div>
-        
-        <div class="profile-buttons">
-          <a href="contact.html" class="myspace-btn">💌 Send Message</a>
-          <a href="index.html" class="myspace-btn">🏠 Back to Home</a>
-        </div>
-      </div>
-    </div>
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border: 3px solid hotpink;
+  border-radius: 0;
+  object-fit: cover;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-    <!-- MIDDLE CONTENT -->
-    <div class="content">
-      <div class="header-box">
-        <h1>more about me ~</h1>
-      </div>
+/* Pixelated Speech Bubble */
+.speech-bubble {
+  position: relative;
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 3px solid hotpink;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 
-      <!-- PROFILE PHOTO BOX -->
-      <div class="profile-photo-box">
-        <img src="me.JPG" alt="paradis profile photo" class="profile-photo">
-      </div>
+/* Pixelated tail pointing up */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid hotpink;
+}
 
-      <!-- SPEECH BUBBLE BIO -->
-      <div class="speech-bubble">
-        <p>Hi! I'm Paradis, I've always been into creative endevors but really got my spark later in life.</p>
-        <p>I specialize in digital painting using Procreate and enjoy bringing my thoughts to life. I'm a big fan of retro videogames, spooky books and garfield.</p>
-      </div>
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #ffc6f5;
+}
 
-      <!-- SKILLS/INTERESTS BOX -->
-      <div class="about-box">
-        <h3>Skills & Interests 🎨</h3>
-        <ul>
-          <li>Digital Art & Illustration</li>
-          <li>Web Design & Development (barely)</li>
-          <li>Procreate & Digital Painting</li>
-          <li>Retro Aesthetics & Y2K Design</li>
-        </ul>
-      </div>
-    </div>
+/* Pixelated corners effect */
+.speech-bubble {
+  clip-path: polygon(
+    0 8px,
+    8px 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px)
+  );
+}
 
-    <!-- RIGHT SIDEBAR - GIF BOX -->
-    <div class="sidebar sidebar-right">
-      <div class="gif-box">
-        <img src="fun.gif" alt="Decorative gif">
-      </div>
-    </div>
+.speech-bubble p {
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
 
-  </div>
-</body>
-</html>
+.speech-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+/* About box styling */
+.about-box ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.about-box li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Right sidebar gif box for about page */
+.sidebar-right .gif-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.sidebar-right .gif-box img {
+  width: 100%;
+  border: 2px solid hotpink;
+  display: block;
+}
+
+/* Mobile adjustments for about page */
+@media (max-width: 1000px) {
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .speech-bubble {
+    padding: 15px;
+  }
+}
