@@ -197,7 +197,6 @@ a:hover {
 .comment-box button:hover {
   background: #ff69b4;
 }
-
 /* === MUSIC PLAYER === */
 .track-list {
   list-style: none;
@@ -259,6 +258,7 @@ a:hover {
 .music-box::-webkit-scrollbar-thumb:hover {
   background: deeppink;
 }
+
 
 /* === MOBILE === */
 @media (max-width: 800px) {
@@ -415,6 +415,7 @@ a:hover,
 marquee {
   margin: 0;
 }
+
 
 
 
