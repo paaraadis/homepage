@@ -1,5 +1,26 @@
 /* === ABOUT PAGE SPECIFIC STYLES === */
 
+/* Header GIF Box */
+.header-box-gif {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.header-box-gif img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Profile Photo Box */
 .profile-photo-box {
   background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
@@ -15,7 +36,7 @@
 }
 
 .profile-photo {
-  width: 500px;
+  width: 200px;
   height: 200px;
   border: 3px solid hotpink;
   border-radius: 0;
@@ -109,6 +130,9 @@
 /* Right sidebar gif box for about page */
 .sidebar-right .gif-box {
   background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  border-radius: 0;
   box-shadow: 
     0 0 20px rgba(255, 105, 180, 0.6),
     0 0 40px rgba(255, 105, 180, 0.4),
