@@ -353,11 +353,15 @@ a:hover,
   font-size: 12px;
   border-radius: 0;
   border: 2px solid deeppink;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
 .myspace-btn:hover {
   background: deeppink;
   transform: scale(1.02);
+  text-decoration: none;
 }
 
 /* Marquee */
@@ -374,6 +378,7 @@ a:hover,
 marquee {
   margin: 0;
 }
+
 
 
 
