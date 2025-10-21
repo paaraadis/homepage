@@ -117,6 +117,7 @@ a:hover {
   margin: 0;
   font-weight: normal;
   text-align: center;
+  text-decoration: underline;
 }
 
 .about-box h3,
@@ -386,3 +387,4 @@ a:hover,
 marquee {
   margin: 0;
 }
+
