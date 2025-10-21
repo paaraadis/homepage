@@ -236,12 +236,6 @@ a:hover {
   max-width: 200px;
 }
 
-/* === MUSIC BOX WITH SCROLL === */
-.music-box {
-  max-height: 400px;
-  overflow-y: auto;
-}
-
 /* === MOBILE === */
 @media (max-width: 1000px) {
   .container {
@@ -382,6 +376,7 @@ a:hover,
 marquee {
   margin: 0;
 }
+
 
 
 
