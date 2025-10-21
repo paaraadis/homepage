@@ -242,24 +242,6 @@ a:hover {
   overflow-y: auto;
 }
 
-.music-box::-webkit-scrollbar {
-  width: 8px;
-}
-
-.music-box::-webkit-scrollbar-track {
-  background: #ffb6e6;
-  border-radius: 0;
-}
-
-.music-box::-webkit-scrollbar-thumb {
-  background: hotpink;
-  border-radius: 0;
-}
-
-.music-box::-webkit-scrollbar-thumb:hover {
-  background: deeppink;
-}
-
 /* === MOBILE === */
 @media (max-width: 1000px) {
   .container {
@@ -400,4 +382,5 @@ a:hover,
 marquee {
   margin: 0;
 }
+
 
