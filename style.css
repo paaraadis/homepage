@@ -238,7 +238,7 @@ a:hover {
 
 /* === MUSIC BOX WITH SCROLL === */
 .music-box {
-  max-height: 100px;
+  max-height: 250px;
   overflow-y: auto;
 }
 
@@ -382,5 +382,6 @@ a:hover,
 marquee {
   margin: 0;
 }
+
 
 
