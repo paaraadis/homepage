@@ -101,6 +101,28 @@ a:hover {
     0 0 60px rgba(255, 105, 180, 0.2);
 }
 
+/* === GIF BOX === */
+.gif-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.gif-box img {
+  width: 100%;
+  max-width: 250px;
+  border: 2px solid hotpink;
+  display: block;
+  margin: 0 auto;
+}
+
 /* === BOXES === */
 .profile-box,
 .info-box,
@@ -209,18 +231,36 @@ a:hover {
 /* === MOBILE === */
 @media (max-width: 1000px) {
   .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 10px;
   }
   
-  .sidebar-left,
-  .sidebar-right {
+  .sidebar-left {
     grid-column: 1;
     position: static;
   }
   
   .content {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+  
+  .sidebar-right {
+    grid-column: 2;
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar-left,
+  .sidebar-right,
+  .content {
     grid-column: 1;
+    order: unset;
   }
 }
 
