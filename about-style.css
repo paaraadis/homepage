@@ -1,0 +1,145 @@
+/* === ABOUT PAGE SPECIFIC STYLES === */
+
+/* Profile Photo Box */
+.profile-photo-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border: 3px solid hotpink;
+  border-radius: 0;
+  object-fit: cover;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pixelated Speech Bubble */
+.speech-bubble {
+  position: relative;
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 3px solid hotpink;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Pixelated tail pointing up */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid hotpink;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #ffc6f5;
+}
+
+/* Pixelated corners effect */
+.speech-bubble {
+  clip-path: polygon(
+    0 8px,
+    8px 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px)
+  );
+}
+
+.speech-bubble p {
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.speech-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+/* About box styling */
+.about-box ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.about-box li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Right sidebar gif box for about page */
+.sidebar-right .gif-box {
+  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
+  border: 2px solid hotpink;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.sidebar-right .gif-box img {
+  width: 100%;
+  border: 2px solid hotpink;
+  display: block;
+}
+
+/* Mobile adjustments for about page */
+@media (max-width: 1000px) {
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .speech-bubble {
+    padding: 15px;
+  }
+}
