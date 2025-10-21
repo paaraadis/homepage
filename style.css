@@ -4,8 +4,7 @@ body {
   font-family: "Calibri", sans-serif;
   color: #000;
   margin: 0;
-  padding: 0;  overflow-y: auto;
-
+  padding: 0;
   font-size: 13px;
 }
 
@@ -17,6 +16,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 /* === TOP NAV BAR === */
 .top-bar {
   display: flex;
@@ -103,6 +103,14 @@ a:hover {
     0 0 60px rgba(255, 105, 180, 0.2);
 }
 
+.profile-pic,
+.friends-grid img,
+.art-img {
+  width: 100%;
+  border: 2px solid hotpink;
+  border-radius: 0;
+}
+
 /* === HEADER === */
 .header-box h1 {
   font-size: 16px;
@@ -132,11 +140,8 @@ a:hover {
 .post h4 {
   margin-top: 0;
   font-size: 13px;
-
-  
 }
 
-/* ADD THIS NEW CODE */
 .post-stats {
   display: flex;
   gap: 15px;
@@ -189,7 +194,6 @@ a:hover {
   margin: 0;
   max-height: 100px;
   overflow-y: auto;
-
 }
 
 .track {
@@ -219,14 +223,14 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
-  
-  /* === MUSIC BOX WITH SCROLL === */
+}
+
+/* === MUSIC BOX WITH SCROLL === */
 .music-box {
-  max-height: 300px; /* Adjust this number to make it taller or shorter */
+  max-height: 300px;
   overflow-y: auto;
 }
 
-/* Optional: Style the scrollbar to match your theme */
 .music-box::-webkit-scrollbar {
   width: 8px;
 }
@@ -243,7 +247,6 @@ a:hover {
 
 .music-box::-webkit-scrollbar-thumb:hover {
   background: deeppink;
-}
 }
 
 /* === MOBILE === */
@@ -292,6 +295,7 @@ a:hover,
 .track button:hover {
   filter: brightness(1.2);
 }
+
 /* === MYSPACE FEATURES === */
 
 /* Online Status */
@@ -382,15 +386,3 @@ a:hover,
 marquee {
   margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
