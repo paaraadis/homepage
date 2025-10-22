@@ -1,0 +1,17 @@
+/* === CONTACT PAGE SPECIFIC STYLES === */
+
+/* Right sidebar gif box for contact page - transparent/floating */
+.sidebar-right .gif-box {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.sidebar-right .gif-box img {
+  width: 100%;
+  border: none;
+  display: block;
+}
