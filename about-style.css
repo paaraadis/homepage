@@ -131,20 +131,17 @@
 
 /* Right sidebar gif box for about page */
 .sidebar-right .gif-box {
-  background: linear-gradient(135deg, #ffc6f5 0%, #ffb6e6 100%);
-  border: 2px solid hotpink;
+  background: transparent;
+  border: none;
   padding: 10px;
   border-radius: 0;
-  box-shadow: 
-    0 0 20px rgba(255, 105, 180, 0.6),
-    0 0 40px rgba(255, 105, 180, 0.4),
-    0 0 60px rgba(255, 105, 180, 0.2);
+  box-shadow: none;
   text-align: center;
 }
 
 .sidebar-right .gif-box img {
   width: 100%;
-  border: 2px solid hotpink;
+  border: none;
   display: block;
 }
 
