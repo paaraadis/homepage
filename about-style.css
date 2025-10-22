@@ -38,7 +38,7 @@
 }
 
 .profile-photo {
-  width: 500px;
+  width: 400px;
   height: 200px;
   border: 3px solid hotpink;
   border-radius: 0;
@@ -129,9 +129,15 @@
   line-height: 1.5;
 }
 
-/* Right sidebar gif box for about page */
+/* Right sidebar styling for about page */
+.sidebar-right {
+  position: sticky;
+  top: 10px;
+}
+
 .sidebar-right .spotify-player {
   display: block;
+  width: 100%;
   box-shadow: 
     0 0 20px rgba(255, 105, 180, 0.6),
     0 0 40px rgba(255, 105, 180, 0.4),
