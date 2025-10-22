@@ -130,6 +130,15 @@
 }
 
 /* Right sidebar gif box for about page */
+.sidebar-right .spotify-player {
+  display: block;
+  box-shadow: 
+    0 0 20px rgba(255, 105, 180, 0.6),
+    0 0 40px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(255, 105, 180, 0.2);
+  margin-bottom: 15px;
+}
+
 .sidebar-right .gif-box {
   background: transparent;
   border: none;
