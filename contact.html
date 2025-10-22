@@ -2,62 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact ✨</title>
+  <title>Contact - Paradis S.</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="cursor-sparkle.js" defer></script>
 </head>
 <body>
 
-<!-- TOP NAV BAR -->
-<div class="top-bar">
-  <div class="top-left">
-    <span class="myspace-logo">myspace</span>
-    <a href="#">Home</a>
-    <a href="#">Browse</a>
-    <a href="#">Search</a>
-    <a href="#">Invite</a>
-    <a href="#">Rank</a>
+  <!-- 🌟 TOP NAV BAR -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span class="myspace-logo">pearspace</span>
+      <a href="index.html">Home</a>      
+      <a href="#">Browse</a>
+      <a href="#">Search</a>
+      <a href="#">Invite</a>
+      <a href="#">Rank</a>
+    </div>
+    <div class="top-right">
+      <span>Welcome, <strong>paradis</strong>!</span>
+      <a href="#">Logout</a>
+    </div>
   </div>
-  <div class="top-right">
-    <span>Welcome, <strong>YourName</strong>!</span>
-    <a href="#">Logout</a>
+
+  <!-- MARQUEE SCROLLING TEXT -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      ˚₊𓆩༺🕷༻𓆪₊˚ Send me a message! I'd love to hear from you! ˚₊𓆩༺🕷༻𓆪₊˚
+    </marquee>
   </div>
-</div>
 
-<div class="container">
+  <div class="container">
 
-  <!-- LEFT SIDEBAR -->
-  <div class="sidebar">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar sidebar-left">
+      <div class="profile-box">
+        <h2>paradis</h2>
+        <p>⠀⠀⠀⢠⡾⠲⠶⣤⣀⣠⣤⣤⣤⡿⠛⠿⡴⠾⠛⢻⡆⠀⠀⠀
+⠀⠀⠀⣼⠁⠀⠀⠀⠉⠁⠀⢀⣿⠐⡿⣿⠿⣶⣤⣤⣷⡀⠀⠀
+⠀⠀⠀⢹⡶⠀⠀⠀⠀⠀⠀⠈⢯⣡⣿⣿⣀⣸⣿⣦⢓⡟⠀⠀
+⠀⠀⢀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠹⣍⣭⣾⠁⠀⠀
+⠀⣀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣸⣷⣤⡀
+⠈⠉⠹⣏⡁⠀⢸⣿⠀⠀⠀⢀⡀⠀⠀⠀⣿⠆⠀⢀⣸⣇⣀⠀
+⠀⠐⠋⢻⣅⣄⢀⣀⣀⡀⠀⠯⠽⠂⢀⣀⣀⡀⠀⣤⣿⠀⠉⠀
+⠀⠀⠴⠛⠙⣳⠋⠉⠉⠙⣆⠀⠀⢰⡟⠉⠈⠙⢷⠟⠉⠙⠂⠀
+⠀⠀⠀⠀⠀⢻⣄⣠⣤⣴⠟⠛⠛⠛⢧⣤⣤⣀⡾</p>
+        <p><strong>Location:</strong> coding prison</p>
+        
+        <div class="online-status">
+          <span class="status-dot"></span>
+          <span>Online Now!</span>
+        </div>
+        
+        <div class="mood-status">
+          <strong>Mood:</strong> friendly 💌
+        </div>
+        
+        <div class="profile-stats">
+          <p>Profile Views: 1,337</p>
+        </div>
+        
+        <div class="profile-buttons">
+          <a href="about.html" class="myspace-btn">⭐ About Me</a>
+          <a href="index.html" class="myspace-btn">🏠 Back to Home</a>
+        </div>
+      </div>
+    </div>
 
-    <div class="info-box">
-      <h3>Links</h3>
-      <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="about.html">🎨 About Me</a></li>
-        <li><a href="contact.html">💌 Contact</a></li>
-      </ul>
+    <!-- MIDDLE CONTENT -->
+    <div class="content">
+      <div class="header-box">
+        <h1>Contact paradis 💌</h1>
+      </div>
+
+      <!-- 💌 COMMENT BOX -->
+      <div id="contact" class="comment-box">
+        <h3>Leave a Comment or Message 💬</h3>
+        <form action="https://formspree.io/f/mnngyaga" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p style="margin-top: 10px; font-size: 11px; color: #666;">Your message will be sent directly to my inbox 💌</p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR - MUSIC PLAYER & GIF -->
+    <div class="sidebar sidebar-right">
+      <iframe class="spotify-player" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3vy7qsDl4q1XsM1BGcwN5s?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      
+      <div class="gif-box">
+        <img src="contact-gif.gif" alt="Decorative gif">
+      </div>
     </div>
 
   </div>
-
-  <!-- RIGHT CONTENT -->
-  <div class="content">
-    <div class="header-box">
-      <h1>Contact Me</h1>
-    </div>
-
-    <div class="comment-box">
-      <h3>Leave a Message 💬</h3>
-      <form action="https://formspree.io/f/mnngyaga" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <p class="tiny-note">Your message will be sent directly to my inbox 💌</p>
-    </div>
-  </div>
-</div>
-
-<script src="music-player.js"></script>
 </body>
 </html>
